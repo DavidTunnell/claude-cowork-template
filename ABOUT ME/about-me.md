@@ -1,24 +1,34 @@
 # About Me
 
-**Last Updated:** 2026-03-18
+**Last Updated:** YYYY-MM-DD
+
+<!-- ============================================================
+     INSTRUCTIONS: Fill in each section below with your personal info.
+     Sections marked CUSTOMIZE are yours to personalize.
+     Sections marked SHARED are Webapper company context, keep them current.
+     You can fill this in by hand or ask Claude to interview you.
+     ============================================================ -->
 
 ## Who I Am
 
-- **Name:** David Tunnell
-- **Role:** Lead Software Architect at [Webapper Services, LLC](https://www.webapper.com/)
-- **Location:** Castroville, Texas just outside of San Antonio
-- **Education:** University of Maryland University College - Bachelor of Computer Science - Cum Laude | The University of Texas at Austin (2010–2013) - Master of Business Administration - MBA 
-- **Portfolio:** [GitHub](https://github.com/DavidTunnell) | [Stack Overflow](https://stackoverflow.com/users/1524210/david-tunnell) | [Linkedin](https://www.linkedin.com/in/david-tunnell/)
+<!-- CUSTOMIZE: Your personal details -->
+- **Name:** [Your full name]
+- **Role:** [Your title] at [Webapper Services, LLC](https://www.webapper.com/)
+- **Location:** [City, State]
+- **Education:** [Degrees, certifications, relevant training]
+- **Portfolio:** [GitHub, LinkedIn, Stack Overflow, personal site, etc.]
 
 ## What I Do Day-to-Day
 
-I'm a software architect at Webapper Services, a web development and consulting company. My work spans both technical leadership and business strategy:
+<!-- CUSTOMIZE: Describe your actual daily work in 3-6 bullets. Examples of what to include:
+     - What types of work do you spend most of your time on?
+     - What tools do you use daily?
+     - What decisions do you make vs. escalate?
+     - Are you leading any strategic initiatives?
+     - What's your growth trajectory or next career goal?
+-->
 
-- **Architecture & Design:** I design system architecture for client projects and internal products. I make technology decisions, define patterns, and ensure quality across the codebase.
-- **Agile Coaching:** I run Scrum ceremonies, coach teams on agile practices, and maintain project health. I hold a Certified Tactical Agilist certification and SAFe SPC experience.
-- **Requirements & Planning:** I write and manage requirements in Jira and Productboard, translating business needs into actionable technical work.
-- **AI Transformation:** I'm leading Webapper's transformation into an AI-native company — this is my top strategic initiative. We're going Anthropic-first with Claude Desktop, Claude Code, Claude Cowork, and Anthropic platform API calls. The vision is a full adoption roadmap: get the whole team on the tools, train everyone on effective LLM prompting and workflows, build and deploy agents that automate repetitive tasks, and stand up a central agent dashboard where every deployed agent is visible, monitored, and managed. The goal isn't to replace developers — it's to empower each person on the team to ship more, faster, and tackle work that would have been out of reach before. Long-term, the default for any new feature, project, or process should be "how can AI help us build this faster and better?" I wrote and delivered an internal AI manifesto to the team laying out this vision and the concrete steps to get there.
-- **Path to CTO:** I'm actively working toward a CTO role, which means I'm balancing hands-on technical work with strategic leadership, team development, and company-wide technology decisions.
+[Describe your day-to-day work here. Be specific. The more detail you give, the better Claude can tailor its output to your actual job.]
 
 ## Primary Tech Stack
 
@@ -30,12 +40,14 @@ I'm a software architect at Webapper Services, a web development and consulting 
 
 ## Team Structure
 
+<!-- SHARED: Webapper team roster. Keep this section current as the team changes. -->
+
 **US Team:**
 - **Patrick Quinn** — CEO (pquinn@webapper.com)
 - **Scott Herring** — COO / Marketing / Sales / SEO (scott@webapper.com)
 - **Joy Miller** — Technical PM, Scrum Master, Manual Tester, SME of VisionAST (joy@webapper.net)
 - **Daniela Camargo** — PM, Scrum Master, Manual Tester, SME of CloudSee (daniela@webapper.net)
-- **David Tunnell (me)** — Lead Software Architect (david@webapper.com)
+- **David Tunnell** — Lead Software Architect (david@webapper.com)
 
 **Vietnam Team (VTeam):**
 - **Steven** — Tech Lead, all projects
@@ -45,17 +57,21 @@ I'm a software architect at Webapper Services, a web development and consulting 
 - **Henry** — SDET, Documentation, Selenium, Unit Tests, DevOps
 - **Max** — Jr/Mid Dev, CloudSee Drive
 
-## Our Product — CloudSee Drive
+## Our Product: CloudSee Drive
 
-Webapper's flagship SaaS product. Browser-based interface for Amazon S3 storage, available on the AWS Marketplace. React frontend, Node.js serverless backend (Lambda/DynamoDB/OpenSearch). The strategic goal is for CloudSee Drive to replace client services revenue and become Webapper's primary business. See `PROJECTS/CloudSee Drive/project-context.md` for full architecture, team, active work, and deployment details.
+<!-- SHARED: Company product context. See PROJECTS/CloudSee Drive/project-context.md for full details. -->
 
-## Client Project — VisionAST
+Webapper's flagship SaaS product. Browser-based interface for Amazon S3 storage, available on the AWS Marketplace. React frontend, Node.js serverless backend (Lambda/DynamoDB/OpenSearch). The strategic goal is for CloudSee Drive to replace client services revenue and become Webapper's primary business.
 
-Webapper's primary client project. Data analytics platform for automotive and powersports dealerships (SalesVision, PowerVision, FinanceVision, ServiceVision, MenuVision). Legacy CFML/Lucee on Aurora MySQL with a long-term modernization plan. Integrates with 12+ DMS systems. See `PROJECTS/VisionAST/project-context.md` for full architecture, team, active work, and deployment details.
+## Client Project: VisionAST
+
+<!-- SHARED: Company client context. See PROJECTS/VisionAST/project-context.md for full details. -->
+
+Webapper's primary client project. Data analytics platform for automotive and powersports dealerships (SalesVision, PowerVision, FinanceVision, ServiceVision, MenuVision). Legacy CFML/Lucee on Aurora MySQL with a long-term modernization plan. Integrates with 12+ DMS systems.
 
 ## AWS Hosting Customers
 
-Webapper also provides AWS hosting services for several clients:
+<!-- SHARED: Webapper hosting clients. Update as clients are added or removed. -->
 
 - **[Atlantic British / RoverParts](https://www.roverparts.com/)** — Specialized retailer for Land Rover and Range Rover parts and accessories, with 11,000+ parts across two US warehouses.
 - **[Icon Media](https://www.icon-media.com/)** — Full-service advertising agency in Anaheim Hills, CA specializing in the automotive aftermarket industry, including their iConfigurators visual software.
@@ -63,18 +79,26 @@ Webapper also provides AWS hosting services for several clients:
 
 ## Other Client Work
 
+<!-- SHARED: Update as client engagements change. -->
+
 - **[Educational Data Services (EDS)](https://www.ed-data.com/)** — Cooperative procurement platform for schools and public entities. Webapper was modernizing their systems (Azure-based). Relationship ending after ~2.5 years; Kevin is transitioning off this contract.
 
 ## Current Priorities
 
-1. Leading AI transformation at Webapper Services
-2. Architecting and shipping client projects
-3. Building AI first systems and processes that scale as I move into a CTO role. Replacing company processes with standardized agents across the company.
-4. Staying sharp on full-stack development using Claude Code while expanding leadership scope
+<!-- CUSTOMIZE: What are YOUR top priorities right now? List 3-5 items in order of importance.
+     Think about: What keeps you up at night? What would make the biggest impact if you nailed it?
+-->
+
+1. [Your #1 priority]
+2. [Your #2 priority]
+3. [Your #3 priority]
 
 ## What I Care About
 
-- Clean, maintainable architecture over clever hacks
-- Teams that ship reliably through good process
-- Practical AI adoption — tools that actually save time, not hype
-- Clear communication between technical and non-technical stakeholders
+<!-- CUSTOMIZE: What are your professional values and principles? What do you optimize for?
+     Examples: code quality, team velocity, developer experience, customer outcomes, clean architecture, etc.
+-->
+
+- [Value or principle #1]
+- [Value or principle #2]
+- [Value or principle #3]
