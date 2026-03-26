@@ -55,7 +55,7 @@
 - **Peter** — Sr. Dev, CloudSee Drive (also helps with VisionAST onboardings)
 - **Kevin** — Sr. Dev, transitioning from EDS contract into AI initiative
 - **Henry** — SDET, Documentation, Selenium, Unit Tests, DevOps
-- **Max** — Jr/Mid Dev, CloudSee Drive
+- **Max** — Mid Dev, CloudSee Drive
 
 ## Our Product: CloudSee Drive
 

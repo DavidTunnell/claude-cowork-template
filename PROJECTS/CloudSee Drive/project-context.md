@@ -20,7 +20,7 @@
 |------|------|------------|
 | David Tunnell | Lead Software Architect | Architecture, requirements, AI coding integration, sprint management |
 | Peter Truong | Sr. Dev | Frontend development, CloudSee Drive primary dev, also helps with VisionAST onboardings |
-| Max Nguyen | Jr/Mid Dev | Backend development, CloudSee Drive |
+| Max Nguyen | Mid Dev | Backend development, CloudSee Drive |
 | Steven Nguyen | Tech Lead (VTeam) | Tech lead across all projects, backend, Free Trial implementation |
 | Henry | SDET | Documentation, Selenium tests, unit tests, DevOps, Jenkins pipeline |
 | Daniela Camargo | PM / Scrum Master / Manual Tester / SME | Product management, QA, domain expert for CloudSee |
