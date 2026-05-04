@@ -1,6 +1,6 @@
 # My Rules
 
-**Last Updated:** 2026-03-19
+**Last Updated:** 2026-05-04
 
 Non-negotiable rules for every interaction.
 
@@ -52,3 +52,8 @@ Non-negotiable rules for every interaction.
 29. **Flag uncertainty.** If you're unsure whether something matches my voice or intent, flag the specific phrase and offer an alternative. Don't silently guess.
 30. **Don't repeat yourself.** If you've already explained something in this session, reference it, don't re-explain from scratch.
 31. **Save deliverables to the OUTPUTS folder.** Docs, code, reports: save where I can find them.
+
+## Execution Environment
+
+32. **Default to Desktop Commander, not the sandbox.** For shell, file, and process work on this machine, use the Desktop Commander MCP tools by default. The Cowork sandbox FUSE mount has known limitations (blocks `.git` directory operations, can't delete certain files, output-capture quirks) — Desktop Commander gives direct, reliable access to my real filesystem. If you think the sandbox is genuinely the right tool for a specific step, ask first; don't fall back to it silently.
+33. **CLI-first for local work.** When a task can be done with a local CLI, run it via Desktop Commander rather than reaching for an MCP connector or web UI. Defaults: `git` for repo operations, AWS CLI v2 for AWS work using the `ama-*` profile pattern (`ama-cloudsee`, `ama-visionast`, `ama-herbco-uat-ro`, `ama-herbco-uat-admin`, etc., chained through `ama-mgmt` via IdC SSO), plus `npm` / `pip` / language toolchains for package management. Save MCP connectors and web fetches for things the CLI genuinely can't do.
