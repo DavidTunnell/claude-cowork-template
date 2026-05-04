@@ -1,0 +1,85 @@
+# CLAUDE.md
+
+> Drop this file at the root of a project repo. It loads at the start of every Claude session against this repo.
+> Replace every `[bracketed placeholder]` with the project's actual value. Delete sections that don't apply.
+> Keep this file under 200 lines. If it grows past that, move detail into `memory/` and link to it.
+
+**Project:** [Project Name]
+**Last Updated:** [YYYY-MM-DD]
+
+## Stack overview
+
+One paragraph: what this project is, who uses it, what it runs on. Reference `PROJECTS/<name>/project-context.md` for the full picture; this is the elevator version.
+
+- **Frontend:** [stack]
+- **Backend:** [stack]
+- **Database:** [stack]
+- **Infra:** [stack]
+- **Repos:** [bitbucket/github URL(s)]
+
+## Ownership matrix
+
+Who owns what. Used so Claude doesn't propose changes in someone else's lane without flagging.
+
+| Area | Owner | Approval required for |
+|------|-------|----------------------|
+| Auth / sessions / IAM | [name] | Any change |
+| Payments / billing | [name] | Any change |
+| Database migrations | [name] | Any DDL change |
+| CI/CD pipeline | [name] | Pipeline edits |
+| [Domain] | [name] | [scope] |
+
+## Hard rules
+
+These override anything else. Drawn from `ABOUT ME/my-rules.md` plus project-specific gates.
+
+1. **Verify before declaring done.** Run `[verify command]` after every meaningful edit and show the output. No "done" or "fixed" without it.
+2. **Atomic commits, one fix per commit.** Each commit is a single change with a why-focused message.
+3. **Bugfixes capped at ~50 lines.** Past that, propose a refactor as a separate task.
+4. **Approval-required areas.** Don't touch auth, payments, or production migrations without explicit approval. Add project-specific zones above and reference them here.
+5. **Read a file before editing it.** Always.
+6. **Match the existing pattern.** Read surrounding code, follow conventions. Consistency beats "better" in isolation.
+7. **Stay in scope.** Do what was asked. Flag adjacent issues; don't quietly fix them.
+
+## Verify command
+
+The single command Claude must run to check work before claiming completion.
+
+```
+[exact command, e.g., npm run typecheck && npm test -- --run]
+```
+
+If verification fails, treat it as a blocker. Roll back rather than patch forward.
+
+## Memory
+
+Persistent memory for this project lives at:
+
+- **Cowork:** [project-relative `memory/` directory or absolute path]
+- **Claude Code:** `~/.claude/projects/[project-slug]/memory/`
+
+Files use typed prefixes — see `HARNESS/memory/README.md` for the convention. The index is `MEMORY.md`. Read the latest retro at the start of every session: `docs/retros/<latest>.md`.
+
+## Subagent dispatch
+
+When the answer is "search across N files," use a subagent. Default tools by task:
+
+- File-finding / grep / "where is X defined" → Explore subagent
+- Open-ended investigation across the codebase → general-purpose subagent
+- Multi-step implementation plan → Plan subagent
+- Architecture decision or migration safety → multi-model consultation (see `HARNESS/verification-patterns.md`)
+
+The main session keeps its context clean; the subagent burns its own and returns a summary.
+
+## Approval-required areas (project-specific)
+
+List any code paths, files, or configs that require explicit approval before edits. Examples:
+
+- `src/auth/**`
+- `src/payments/**`
+- Anything in `infra/` that's been deployed
+- Database migrations after they've been applied
+
+## Project-specific notes
+
+[Anything else session-to-session that doesn't fit above. Branching strategy, test data location, deploy conventions, gotchas, lore.]

@@ -1,0 +1,46 @@
+# Memory Index — [Project Name]
+
+**Last Updated:** [YYYY-MM-DD]
+
+This is the index for the project's typed-memory directory. Every file in this directory is listed below with a one-line summary. See `HARNESS/memory/README.md` for the prefix convention.
+
+## How to use
+
+- Read this file at the start of every session (the harness CLAUDE.md tells Claude to do this).
+- When you add a new memory file, add a row to the right table below in the same session.
+- When you update a file substantively, bump the `Last Updated` date here and in the file itself.
+
+## user_* — preferences, voice, gotchas
+
+| File | Summary |
+|------|---------|
+| user_preferences.md | [one line] |
+| user_voice.md | [one line] |
+
+## project_* — facts about this project
+
+| File | Summary |
+|------|---------|
+| project_overview.md | [one line] |
+| project_release_process.md | [one line] |
+
+## reference_* — stable technical anchors
+
+| File | Summary |
+|------|---------|
+| reference_stack.md | [one line] |
+| reference_aws_accounts.md | [one line] |
+
+## feedback_* — lessons from past sessions
+
+| File | Summary |
+|------|---------|
+| _none yet — append from retros_ | |
+
+## Latest retro
+
+The session that last updated this memory was:
+
+- **Date:** [YYYY-MM-DD]
+- **Topic:** [topic]
+- **Retro:** `docs/retros/[YYYY-MM-DD]-[topic].md`
