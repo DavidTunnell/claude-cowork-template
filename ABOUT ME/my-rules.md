@@ -69,6 +69,21 @@ Non-negotiable rules for every interaction.
 30. **Don't repeat yourself.** If you've already explained something in this session, reference it, don't re-explain from scratch.
 31. **Save deliverables to the OUTPUTS folder.** Docs, code, reports: save where I can find them.
 
+## Execution Environment (Webapper Standard)
+
+32. **Default to Desktop Commander, not the sandbox.** For shell, file, and process work on this machine, use the Desktop Commander MCP tools by default. The Cowork sandbox FUSE mount has known limitations (blocks `.git` directory operations, can't delete certain files, output-capture quirks) — Desktop Commander gives direct, reliable access to the real filesystem. If you think the sandbox is genuinely the right tool for a specific step, ask first; don't fall back to it silently.
+33. **CLI-first for local work.** When a task can be done with a local CLI, run it via Desktop Commander rather than reaching for an MCP connector or web UI. Defaults: `git` for repo operations, AWS CLI v2 for AWS work using the `ama-*` profile pattern (`ama-cloudsee`, `ama-visionast`, etc., chained through `ama-mgmt` via IdC SSO), plus `npm` / `pip` / language toolchains for package management. Save MCP connectors and web fetches for things the CLI genuinely can't do.
+
+## Harness Discipline (Webapper Standard)
+
+34. **Verify before declaring done.** Don't say "done" or "fixed" without running the project's verify command (`tsc --noEmit`, `npm test`, `pytest`, `verify.sh`, whatever it is) and pasting the output. Hallucinated success is the worst failure mode — it ends the session with the user trusting work that doesn't actually work. See `HARNESS/verification-patterns.md` for recipes by domain.
+35. **Atomic commits, one fix per commit.** One change per commit. Commit messages explain the why, not the what. Clean history makes rollback cheap; squashed monsters make it impossible.
+36. **Cap bugfixes at ~50 lines.** If a fix grows past that, you're not fixing a bug — you're refactoring. Stop and propose the refactor as a separate task. Keeps blast radius small and review tractable.
+37. **Dispatch subagents for grep work.** Use Explore or general-purpose subagents for file-finding, "where is X defined," and open-ended cross-codebase searches. Main session keeps its context clean; the subagent burns its own and returns a summary.
+38. **Auto-retro after non-trivial sessions.** Save retros to `docs/retros/YYYY-MM-DD-topic.md` using the structure in `HARNESS/retros/retro.template.md`. Non-trivial = a session that produced an artifact, made a decision, or surfaced a finding worth referencing later. Skip the retro for pure Q&A or one-tool lookups; too many retros drown the signal as much as too few. The next session starts with the latest retro for continuity — no re-briefing, no re-explaining.
+39. **Multi-model consultation for high-stakes calls.** For architecture decisions, security choices, or migrations, get a second opinion (parallel agent or another model) before locking in a direction. Three independent reads beat one confident monologue. See `HARNESS/verification-patterns.md` § Multi-model consultation.
+40. **Approval-required areas are gates, not suggestions.** Auth, payments, production migrations, and any project-specific approval-required path in `CLAUDE.md` need explicit user approval before edits. Flag and stop; don't quietly proceed.
+
 ---
 
 ## My Personal Rules
@@ -90,6 +105,6 @@ Non-negotiable rules for every interaction.
      - "For client emails, always draft two versions: one short, one detailed"
 -->
 
-32. [Your personal rule]
-33. [Your personal rule]
-34. [Your personal rule]
+41. [Your personal rule]
+42. [Your personal rule]
+43. [Your personal rule]
