@@ -3,6 +3,10 @@
 > Save as `docs/retros/YYYY-MM-DD-topic.md` in the project repo.
 > The next session reads the latest file in this folder for continuity.
 > Keep it short: ~150 lines max. If a session generates more, split into multiple retros.
+>
+> **When to write a retro:** after any session that produced an artifact, made a decision,
+> or surfaced a finding worth referencing later. Skip the retro for pure Q&A or one-tool
+> lookups — too many retros drown the signal as much as too few.
 
 **Project:** [Project Name]
 **Session length:** [approx, e.g., 2h]

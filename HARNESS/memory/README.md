@@ -6,10 +6,11 @@ Persistent memory for a project. Files are typed by prefix so the directory stay
 
 ## File path
 
-- **Cowork:** `<repo>/memory/`
-- **Claude Code:** `~/.claude/projects/<project-slug>/memory/`
+- **Cowork (project repo is yours):** `<repo>/memory/`
+- **Claude Code (project repo is yours):** `~/.claude/projects/<project-slug>/memory/`
+- **Client engagement (source repo is not yours):** memory lives alongside the project's harness folder in this template repo, e.g., `PROJECTS/<project-name>/memory/`. The source repo (the client's iBizFusion mirror, Adrian's repo, etc.) stays untouched. Retros mirror the same structure: `PROJECTS/<project-name>/docs/retros/`.
 
-Pick one and stick with it for a given project. If you switch environments later, copy the directory over.
+Pick one path and stick with it for a given project. If you switch environments or get write access to the client repo later, copy the directory over.
 
 ## Naming convention
 

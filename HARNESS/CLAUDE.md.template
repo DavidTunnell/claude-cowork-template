@@ -51,14 +51,25 @@ The single command Claude must run to check work before claiming completion.
 
 If verification fails, treat it as a blocker. Roll back rather than patch forward.
 
+**If no verify command exists yet** (legacy stack, no tests, no CI), say so explicitly instead of fabricating one. Example:
+
+```
+Status: not yet established. <one-paragraph why>
+Candidates being evaluated: cfformat --check, staging-environment smoke suite (blocked on staging-env existence)
+Until verify exists: every "done" claim on changes is conditional on <fallback verification, e.g., manual UI confirmation by the system owner>.
+```
+
+Add "establish a verify command" to the project's improvement backlog rather than pretending one exists.
+
 ## Memory
 
 Persistent memory for this project lives at:
 
-- **Cowork:** [project-relative `memory/` directory or absolute path]
-- **Claude Code:** `~/.claude/projects/[project-slug]/memory/`
+- **Cowork (project repo is yours):** `<repo>/memory/`
+- **Claude Code (project repo is yours):** `~/.claude/projects/[project-slug]/memory/`
+- **Client engagement (source repo is not yours):** memory lives alongside the project's harness folder, e.g., `PROJECTS/[project-name]/memory/` in this template repo. CLAUDE.md is in the harness folder; copy it into the source repo only if you have write access and approval. Retros likewise: `PROJECTS/[project-name]/docs/retros/<latest>.md`.
 
-Files use typed prefixes — see `HARNESS/memory/README.md` for the convention. The index is `MEMORY.md`. Read the latest retro at the start of every session: `docs/retros/<latest>.md`.
+Files use typed prefixes — see `HARNESS/memory/README.md` for the convention. The index is `MEMORY.md`. Read the latest retro at the start of every session.
 
 ## Subagent dispatch
 

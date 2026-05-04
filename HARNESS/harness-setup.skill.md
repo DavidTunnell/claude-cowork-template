@@ -34,16 +34,29 @@ Copy `HARNESS/CLAUDE.md.template` to `<repo root>/CLAUDE.md`. Fill in:
 
 ### 2. Create the memory directory
 
-Cowork: `<repo>/memory/`. Claude Code: `~/.claude/projects/<slug>/memory/`. Choose one based on environment.
+Choose the path based on environment:
 
-Seed with these starter files:
+- **Cowork (project repo is yours):** `<repo>/memory/`
+- **Claude Code (project repo is yours):** `~/.claude/projects/<slug>/memory/`
+- **Client engagement (source repo is not yours, e.g., iBizFusion at `dev\ibizfusion`):** memory lives alongside the project's harness folder, e.g., `PROJECTS/<name>/memory/` in claude-cowork-template. The CLAUDE.md goes in the harness folder; copy it into the source repo only if you have write access and approval.
 
-- `MEMORY.md` — index, copy from `HARNESS/memory/MEMORY.md.template` and fill in the project name + the three seed entries below.
-- `project_overview.md` — one-paragraph what-and-why of the project. Pull from `project-context.md` if present.
-- `reference_stack.md` — the full stack with versions and any non-obvious lib choices.
-- `user_preferences.md` — start empty with a short comment explaining what goes here. The user (or Claude observing) fills this over time.
+Seed with the **minimum four** below, plus any **applicable extensions** that match the project:
 
-**Verify:** `ls memory/` shows the four files. `MEMORY.md` lists them.
+**Minimum four** (always):
+
+- `MEMORY.md` — index, from `HARNESS/memory/MEMORY.md.template`. Fill in the project name and entries for every other file.
+- `project_overview.md` — one-paragraph what-and-why. Pull from `project-context.md` if present.
+- `reference_stack.md` — full stack with versions and any non-obvious lib choices.
+- `user_preferences.md` — start with project-specific preferences (tone with stakeholders, scope guardrails). Empty-but-reserved is fine if nothing project-specific exists yet.
+
+**Applicable extensions** (add when the project actually uses them):
+
+- `reference_aws_account.md` — for AWS-deployed projects. Account IDs, profile pattern, CloudTrail location, common gotchas.
+- `reference_jira_workflow.md` — for projects with a Jira project key. Ticket workflow, sprint cadence, custom fields, JQL filters used.
+- `reference_payment_systems.md` — for projects touching Stripe / Authorize.Net / similar. Tokenization patterns, webhook endpoints, test card data.
+- `reference_integrations.md` — for projects with non-trivial third-party APIs. Endpoint maps, auth flows, retry behavior.
+
+**Verify:** `ls memory/` shows the minimum four plus any extensions. `MEMORY.md` lists every file with a one-line summary.
 
 ### 3. Add the retro structure
 
@@ -53,11 +66,9 @@ Create `<repo>/docs/retros/`. Copy `HARNESS/retros/retro.template.md` to `<repo>
 
 ### 4. Pick and install MCPs
 
-Walk through `HARNESS/mcp-shortlist.md`. For each, ask the user:
+Walk `HARNESS/mcp-shortlist.md` in **one pass** — don't go MCP-by-MCP for fourteen yes/no prompts. Produce a `mcp-decisions.md` table with three columns: MCP, Decision (install / pending / skip), and a one-line rationale grounded in this project's specifics. Show the table to the user, then iterate by exception.
 
-- Is this project's stack served by this MCP? (e.g., is the data in Supabase, Postgres, or DynamoDB?)
-- Do you already have an account / are you authenticated?
-- Yes / no / skip.
+The table should mirror the Audit table at the bottom of `mcp-shortlist.md` so future reviews can re-read the decisions in one place.
 
 Install the agreed-on set. For Cowork, this is via the cowork plugin / connector flow. For Claude Code, it's `claude mcp add` or the equivalent config.
 
