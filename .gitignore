@@ -1,1 +1,15 @@
+# Sandbox / scratch
 tmp/
+.bashrc
+.bash_logout
+.profile
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
