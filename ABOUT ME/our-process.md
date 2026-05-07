@@ -1,221 +1,187 @@
-# Webapper Agile Guide (WAG) - Process Overview
+# Our Process
 
-**Last Updated:** 2026-03-18
-**Source:** WAG v4.0 (January 23, 2025)
+> **How to fill this out**
+> This file describes how *your team* works. If you're filling out the template solo, write what you observe.
+> If your team is adopting this template together, fill it in once and share. Re-read it whenever the process actually changes.
+> Replace prompts and `[BRACKETS]` with your specifics. Drop sections that don't apply.
+> Or in Cowork: **"help me fill out our-process.md"**.
 
-## What This Is
+**Last Updated:** YYYY-MM-DD
 
-The WAG is Webapper's internal guide to how we build and deliver software. It defines our scrum process, sprint structure, ticket standards, roles, and ceremonies. Every project at Webapper follows this process unless a specific deviation is noted in the project's context file.
+---
 
-## Core Philosophy
+## How We Work (High-Level)
 
-High quality software comes from strong process and clarity. Clarity requires effort and discipline. Requirements must be described before programming, and with enough detail to prevent blockers. Tickets are the "one source of truth" (OSOT) for all work.
+[One paragraph. What flavor of process does your team use? Agile (Scrum, Kanban, Scrumban), waterfall, project-based, campaign cycles, continuous flow, ad-hoc? What's the core philosophy behind the choice?]
 
-## Sprint Structure
+<details>
+<summary>Example (creative agency)</summary>
 
-- **Sprint Length:** 2 weeks, synchronized across all Webapper projects
-- **Sprint Naming:** "{SPRINT START DATE}/{SPRINT END DATE} - {Customer}" (e.g., "03-11-26 / 03-25-26 Cloudsee Drive")
-- **Cadence Goal:** Everything happens during a sprint: planning, standups, review, retrospective
+We run a project-based studio model. Each client engagement gets a small core team (creative director, designer, project manager) and a defined scope, timeline, and budget. Internal initiatives use light Kanban with a weekly review. The core philosophy is "fewer projects, deeper craft" — we'd rather do five projects exceptionally than fifteen adequately.
+</details>
 
-## Ceremonies Schedule
+---
 
-- **Daily Standup (USTeam):** All team members submit asynchronous standups using our proprietary tool [Daily Pulse](https://dailypulse.webapper.com/). Each person answers: What did I do yesterday? What am I working on today? Any blockers? Highlights/big wins? Daily Pulse also provides a team standup board with filtering by member and date, AI-powered analysis of standups and Jira tickets (via AWS Bedrock + OpenSearch), Jira integration with sprint metrics (active/blocked/completed tickets, hours tracking, sprint progress), smart ticket summaries, auto-labeling, release notes generation, and a Weekend Stories feature for team bonding. Architecture: React frontend (Vite/Tailwind/shadcn), Python FastAPI on AWS Lambda (SAM) with two services (api + orchestry for Jira sync), MySQL, OpenSearch (vector embeddings for semantic search), AWS Bedrock (Claude Sonnet for AI features).
-- **Sprint Touchpoint (VTeam + USTeam):** Once per month after the All-Hands meeting
-- **Sprint Planning & Backlog Refinement:** USTeam has weekly meetings per project. Only scrum masters should add/remove tickets from sprints.
-- **Sprint Review / Demo:** Once per sprint with all available stakeholders including the customer. Can be replaced with a written summary or email report. We will want to create an AI agent to send this progress email to customers each sprint.
+## Cadence
 
-## Ticket Workflow (Standard Statuses)
+[How long are your iterations? When do they start and end? Is the team synchronized on a single rhythm, or do projects run independently?]
 
-1. **New** - New requirement (bug, feature, or enhancement)
-2. **Discovery** - Scrum master works with clients on requirements. Dev team asks questions and provides estimates.
-3. **Confirmed** - Ticket is understood, estimation complete
-4. **In Progress** - Developer is actively working, updates ticket daily
-5. **Ready to Test** - Deployed to QA server, scrum master tests. Failure goes back to In Progress.
-6. **Testing Complete - Ready to Deploy** - QA passed, ready for production
-7. **Ready for Production Testing** - Deployed to prod, developer verifies, then scrum master and/or client performs UAT. Failure goes back to In Progress.
-8. **Done!** - Requirements fully delivered
+- **Iteration / cycle length:** [E.G., "2-WEEK SPRINTS, MON-FRI" OR "QUARTERLY OKRS" OR "PROJECT-BASED, NO FIXED LENGTH"]
+- **Synchronization:** [DOES THE WHOLE COMPANY OPERATE ON ONE CALENDAR, OR DOES EACH TEAM RUN ITS OWN?]
+- **Significant calendar events:** [QBRS, BOARD MEETINGS, RELEASE WINDOWS, ANNUAL PLANNING, ETC.]
 
-Additional statuses: Waiting on Customer (blocked on external party), On Hold (paused for any reason), Closed/Stale (no longer relevant), Invalid (duplicate or false report)
+<details>
+<summary>Example</summary>
 
-## Plan Levels (Ticket Hierarchy)
+- **Iteration length:** 2-week sprints, synchronized across all engineering teams. Sprints run Monday-Friday across two weeks.
+- **Synchronization:** All product and engineering work follows the same sprint calendar. Marketing runs on monthly campaign cycles.
+- **Calendar events:** Quarterly business reviews (last week of quarter), monthly all-hands (first Thursday), annual planning in early November.
+</details>
 
-- **Epic** - Large-scale objective spanning multiple sprints. Should consist of multiple Issues (Story, Task, Bug). Should not remain open indefinitely. 
-- **Issue (Story, Task, Bug)** - Medium scale, under an epic. Stories detail specific functionality focusing on user value. Should contain Sub-tasks or a checklist if complex.
-- **Sub-task** - Smallest unit. Specific, well-defined, achievable in a short timeframe. Should typically take 8 hours or less.
+---
 
-## Estimation
+## Standard Ceremonies & Meetings
 
-- Every ticket must be estimated before being added to a sprint
-- An educated guess is better than no estimate
-- **Estimate Confidence** levels:
-  - No Earthly Idea: only a guess, ticket not well understood
-  - Low: ~25% accurate (could take up to 3x longer)
-  - Medium: ~50% accurate (could take up to 2x longer)
-  - High: ~75%+ accurate (could take up to 25% longer)
+[Recurring meetings the team relies on. Include who attends, how often, and what they're for.]
 
-## Sprint Capacity Planning
+| Ceremony | Cadence | Who | Purpose |
+|---|---|---|---|
+| [E.G., DAILY STANDUP] | [DAILY] | [TEAM] | [WHAT IT'S FOR] |
+| | | | |
+| | | | |
 
-- Sprint Planning Spreadsheet tracks estimates vs. actual hours, planned vs. unplanned work
-- All effort counts: Discovery, Testing, Regression Test Building, Studying, Cross-Training, Documentation, and Development
-- No ticket should be added to a sprint if it isn't assigned
+<details>
+<summary>Example</summary>
 
-## Sprint Monitoring & Reporting
+| Ceremony | Cadence | Who | Purpose |
+|---|---|---|---|
+| Daily standup | Daily, 9:30am | Engineering team | What I did, what I'm doing, blockers. 15 min hard cap. |
+| Sprint planning | Every other Monday | Engineering team + PM | Confirm sprint scope and assignments. |
+| Sprint review / demo | Last day of sprint | Team + stakeholders | Walk through what shipped. Customer-facing demo if applicable. |
+| Sprint retro | Last day of sprint, after demo | Engineering team only | What worked, what didn't, one thing we'll change. |
+| Backlog refinement | Weekly, Wednesdays | PM + tech lead + designer | Groom upcoming work, estimate, clarify requirements. |
+| 1:1s | Bi-weekly | Each manager + report | Career, feedback, blockers. |
+</details>
 
-Daily and sprint-level monitoring happens through a combination of Jira boards, dashboards, and reports:
+---
 
-- **Active Sprint Boards:** Monitored daily. Shows current sprint tickets, statuses, assignees, and workflow columns.
-  - [CSD Board](https://webapper.atlassian.net/jira/software/c/projects/CSD/boards/12)
-  - [EDS Board](https://webapper.atlassian.net/jira/software/c/projects/EDS/boards/10)
-  - [VAST Board](https://webapper.atlassian.net/jira/software/c/projects/VAST/boards/14)
-  - [Webapper Board](https://webapper.atlassian.net/jira/software/c/projects/WEBA/boards/8)
-- **Jira Dashboards:**
-  - [Webapper Sprint Planning - SumUp](https://webapper.atlassian.net/jira/dashboards/10171) — Per-project sprint gadgets showing Issue Type, Key, Summary, Priority, Assignee, Status, Original Estimate (summed), and Estimate Confidence. Powered by per-project sprint filters (CSD `10015`, EDS `10016`, VAST `10121`)
-  - [All Projects - Open Tickets](https://webapper.atlassian.net/jira/dashboards/10002) — Cross-project view of all open tickets. [Saved Filter](https://webapper.atlassian.net/issues/?filter=10012)
-- **Jira Reports (per board):**
-  - [Sprint Retrospective Report](https://webapper.atlassian.net/jira/software/c/projects/CSD/boards/12/reports/sprint-retrospective) — Completed vs. incomplete work per sprint
-  - [Burndown Chart](https://webapper.atlassian.net/jira/software/c/projects/CSD/boards/12/reports/burndown-chart) — Remaining work over time within a sprint
-- **Ticket Review Dashboards:**
-  - [Monday Ticket Review](https://webapper.atlassian.net/jira/dashboards/10002)
-  - [My Open Tickets](https://webapper.atlassian.net/jira/dashboards/10039?maximized=10229)
-  - [Stale Tickets](https://webapper.atlassian.net/issues/?filter=10013)
+## How Work Is Tracked
 
-### JQL Filters (for AI agent / Cowork automation)
+[Where does work live? How does something move from idea to "done"? What's the equivalent of a "ticket" in your system?]
 
-These are the underlying JQL queries that power the dashboards above. Use these to replicate dashboard data programmatically via the Atlassian connector.
+- **Primary tracker:** [JIRA, ASANA, LINEAR, MONDAY, NOTION, TRELLO, ETC.]
+- **Hierarchy:** [E.G., "EPIC > STORY > SUB-TASK" OR "INITIATIVE > PROJECT > TASK"]
+- **Statuses (workflow):** [LIST THE STATES A TICKET MOVES THROUGH]
+- **Estimation:** [HOW WORK IS SIZED, IF IT IS]
+- **Definition of done:** [WHAT IT TAKES FOR SOMETHING TO BE CONSIDERED COMPLETE]
 
-**Current Sprint Tickets - CSD** (`filter=10015`): [View](https://webapper.atlassian.net/issues/?filter=10015)
-```jql
-sprint in openSprints() AND project = "CloudSee Drive"
-```
+<details>
+<summary>Example</summary>
 
-**Current Sprint Tickets - EDS** (`filter=10016`): [View](https://webapper.atlassian.net/issues/?filter=10016)
-```jql
-sprint in openSprints() AND project = "Educational Data Services"
-```
+- **Primary tracker:** Jira. Each project has its own board (e.g., `MKT`, `ENG`, `OPS`).
+- **Hierarchy:** Epic > Story / Task / Bug > Sub-task. Sub-tasks should be ≤ 1 day of work.
+- **Statuses:** New → Discovery → Confirmed → In Progress → Ready to Test → Testing Complete → Ready for Production → Done. Plus side states: Waiting on Customer, On Hold, Closed/Stale, Invalid.
+- **Estimation:** Hours, with a confidence rating (Low / Medium / High / "No idea"). Every ticket must be estimated before it enters a sprint.
+- **Definition of done:** Acceptance criteria met, tests passing, deployed to production, PM signed off, ticket closed with summary comment.
+</details>
 
-**Current Sprint Tickets - VAST** (`filter=10121`): [View](https://webapper.atlassian.net/issues/?filter=10121)
-```jql
-sprint in openSprints() AND project = VisionAST
-```
-
-**All Projects - Open Tickets** (`filter=10012`): [View](https://webapper.atlassian.net/issues/?filter=10012)
-```jql
-(status NOT IN ("Done", "INVALID", "STALE") AND
-((project IN ("CSD", "EDS", "VAST") AND sprint IN openSprints()) OR
-(project NOT IN ("CSD", "EDS", "VAST")))) AND
-(labels IS EMPTY OR labels NOT IN (EDSInternalDev))
-```
-
-**Stale Tickets** (`filter=10013`): [View](https://webapper.atlassian.net/issues/?filter=10013)
-```jql
-(updated <= -7d
- AND statusCategory NOT IN (Done, "To Do")
- AND status NOT IN (Discovery, CONFIRMED))
-AND NOT (project = VAST AND status IN ("Waiting on Customer", "On Hold"))
-AND NOT (project = VAST AND sprint IN ("Waiting for Completion"))
-AND NOT (
-  project IN (EDS, CSD, VAST)
-  AND sprint IS EMPTY
-)
-AND assignee != 712020:c63bb606-bdb7-4ce5-87e3-c79bc35875fb
-```
-
-**Future Vision:** Replace manual dashboard checks and report reviews with AI agents that automatically pull sprint metrics, generate summaries, flag risks, and deliver insights. Current interim approach: Claude Cowork uses the JQL filters above via the Atlassian connector for structured data, and Claude in Chrome for visual reports (burndown charts, sprint retrospectives) that don't have clean API equivalents.
+---
 
 ## Roles
 
-### Scrum Masters (USTeam)
-- Only people who should add/remove tickets from sprints
-- Groom/curate backlogs consistently (daily/weekly)
-- Plan sprints and respond to all questions within 24 hours
-- Oversee Estimate Confidence and Estimate fields
-- Work with clients to fill the Product Owner role
+[Who does what on a typical engagement or sprint. Include the responsibilities of each role, not just titles.]
 
-### Developers
-- Update tickets daily (comments, status, hours)
-- Keep ticket list matching weekly swim lane
-- Communicate blockers immediately, tag USTeam members in tickets
-- Do not self-assign tickets without discussing with scrum master
-- Respond to all questions within 24 hours
-- Goal: finish the work defined for each sprint
+- **[ROLE 1]:** [RESPONSIBILITIES]
+- **[ROLE 2]:** [RESPONSIBILITIES]
 
-## Ticket Rules
+<details>
+<summary>Example</summary>
 
-- **Comments:** Always add comments as you work, even incremental updates
-- **Scope Creep:** If scope is added to an in-progress estimated ticket, new work goes in a new ticket
-- **Time Tracking:** Keep Total Time Worked up-to-date. Hours must match Harvest.
-- **Git Commits:** Use format `CSD-123 - Your commit message here` (Jira project key prefix) to link commits to tickets
-- **Bug Format:** Developer output must include Root Cause and Solution
-- **Tags:** Tag tickets with helpful meta information (Bug, Bad Data, Next Sprint, etc.)
-- **Followers:** Add followers and use @mentions for notifications
+- **Project Manager (PM):** Owns the schedule, scope, and stakeholder communication. Runs ceremonies. Adds and removes tickets from sprints.
+- **Tech Lead:** Owns architecture, code quality, and unblocking the team. Reviews critical PRs.
+- **Engineers:** Own the work they pick up. Update tickets daily. Communicate blockers immediately. Write tests. Pair on tricky problems.
+- **Designer:** Owns the user experience. Co-owns the spec with the PM. Reviews implementation against the design.
+- **QA / Tester:** Owns regression. Writes test plans for new work. Sign-off needed before "Ready for Production."
+- **Product Owner / Client liaison:** Owns priorities and the "why." Available within 24 hours for blocking questions.
+</details>
 
-## Code Review / PR Process
+---
 
-Not yet mature. The goal is to establish a formal PR review workflow and leverage Atlassian Rovo AI to assist with code reviews. Branch strategy and PR conventions are defined per-project in the project context files. This section will be expanded as the process matures.
+## Communication Norms
 
-## Key Ticket Metrics
+[How does the team communicate, and what's expected? This prevents misalignment more than any tool ever will.]
 
-- **Velocity:** Move tickets toward closure as quickly as possible while maintaining quality
-- **Accuracy:** All ticket fields as accurate as possible
-- **Recency:** Tickets as up-to-date as possible
-- **Formula:** High Velocity + High Quality = Great Customer Experience
+- **Synchronous channels:** [E.G., SLACK, GOOGLE CHAT, TEAMS]
+- **Asynchronous channels:** [E.G., EMAIL, DOCS, TICKETS]
+- **Response time expectations:** [WHAT'S "NORMAL" AND WHAT'S "URGENT"]
+- **How to escalate:** [WHEN AND HOW TO ESCALATE A BLOCKER]
 
-## Current Manual Sprint Transition Process (Project Manager Task)
+<details>
+<summary>Example</summary>
 
-1. Screenshot the project in the "Webapper Sprint Planning - SumUp" dashboard
-2. Paste screenshot at the top of the "Completed Sprints" page in the appropriate Confluence space
-3. Navigate to the current sprint in Backlog view
-4. Move any incomplete tickets to the next sprint by changing the Sprint field
-5. Click "Complete sprint"
-6. Click "Start sprint" for the new sprint
+- **Sync:** Slack for fast back-and-forth, video calls for design reviews and difficult conversations. Default to async unless live really helps.
+- **Async:** Email for external. Tickets for any decision that needs a paper trail. Internal docs for anything more than half a page.
+- **Response times:** Slack DMs within a few hours during work hours. Tagged in a ticket: within 24 hours. Email: within a business day. After-hours: only urgent.
+- **Escalation:** Blocker for >24 hours → tag PM. Blocker for >48 hours → tag tech lead and PM. Anything that risks the sprint goal → flag in standup *immediately*, don't wait.
+</details>
 
-## Confluence (Wiki)
+---
 
-- Central shared repository of information describing customers and their systems
-- Avoid duplicate information across pages, use page hierarchy for clarity
-- Use formatting and link to external tools (Google Docs, Sheets, Miro) when needed
-- In the future our goal is to **Never store access credentials in Confluence**
+## Tools
 
-## Tools & Claude Access Methods
+[The tools you use to actually run the work, with what each one is for. Helps Claude know which connector or surface to reach for.]
 
-Use MCP connectors when available (faster, structured data). Fall back to Chrome MCP for visual/interactive content, or Desktop Commander for CLI/API access. Tools without any MCP use Chrome or Desktop Commander.
+| Tool | Use For | Notes |
+|---|---|---|
+| [TOOL NAME] | [WHAT IT'S FOR] | [LINKS, ACCESS, SPECIFICS] |
+| | | |
 
-| Tool | URL | MCP Connector | Chrome | Desktop Commander | When to use which |
-|------|-----|:---:|:---:|:---:|---|
-| **Jira** | [webapper.atlassian.net](https://webapper.atlassian.net/) | ✅ Atlassian | ✅ | — | **MCP first** for JQL queries, reading/creating/updating issues, searching. **Chrome** for dashboards, sprint boards, visual reports (burndown, retrospective), and anything in gadgets/iframes. |
-| **Confluence** | [webapper.atlassian.net/wiki](https://webapper.atlassian.net/wiki/) | ✅ Atlassian | ✅ | — | **MCP first** for reading/searching/creating pages via CQL. **Chrome** for embedded macros or page trees. |
-| **Bitbucket** | [bitbucket.org/cloudsee-drive](https://bitbucket.org/cloudsee-drive/workspace/repositories) | ❌ | ✅ | ✅ | **Desktop Commander first** for git operations on cloned repos (`C:\Users\david\dev\`): `git log`, `git diff`, `git pull`, read source files. **Chrome** for PRs, repo browsing, and pipelines. See instructions below. |
-| **Google Drive** | — | ✅ Drive MCP | ✅ | — | **MCP first** for searching and fetching Google Docs. **Chrome** for Sheets, Slides, or complex formatting. |
-| **Gmail** | — | ✅ Gmail MCP | ✅ | — | **MCP first** for searching, reading, and drafting emails. **Chrome** for complex threads or attachments. |
-| **Google Calendar** | — | ✅ GCal MCP | ✅ | — | **MCP first** for listing events, finding free time, creating events. **Chrome** for visual calendar views. |
-| **Productboard** | [webapper.productboard.com](https://webapper.productboard.com/) | ❌ | ✅ | — | **Chrome only.** ICE scoring for CloudSee Drive roadmap. |
-| **Harvest** | [webapper.harvestapp.com](https://webapper.harvestapp.com/) | ❌ | ✅ | — | **Chrome only.** Time tracking. |
-| **Daily Pulse** | [dailypulse.webapper.com](https://dailypulse.webapper.com/) | ❌ | ✅ | — | **Chrome only.** Proprietary async standup + sprint intelligence tool. |
-| **Weekdone** | [weekdone.com](https://weekdone.com/) | ❌ | ✅ | — | **Chrome only.** Quarterly OKRs. |
-| **Google Chat** | [chat.google.com](https://chat.google.com/) | ❌ | ✅ | — | **Chrome only.** Primary team communication. No MCP available. |
+<details>
+<summary>Example</summary>
 
-### Bitbucket Access via Desktop Commander
+| Tool | Use For | Notes |
+|---|---|---|
+| Jira | Ticket tracking, sprint boards | Atlassian connector for read/write; web for visual reports |
+| Confluence | Wiki, runbooks, decisions | Atlassian connector for read/search/create |
+| Slack | Real-time team chat | — |
+| Google Workspace | Docs, sheets, calendar, email | Drive + Gmail + Calendar connectors |
+| GitHub | Code, PRs, CI | Web + GitHub connector |
+| Figma | Design files | Read-only access for non-designers |
+| Notion | Internal wiki and runbooks | Notion connector |
+</details>
 
-Repos are hosted at [bitbucket.org/cloudsee-drive](https://bitbucket.org/cloudsee-drive/workspace/repositories). No MCP available. Use Desktop Commander (Windows CMD) for git and Bitbucket REST API operations.
+---
 
-**Local repos** are cloned to `C:\Users\david\dev\`. To read code, check history, or make changes:
-```cmd
-cd C:\Users\david\dev\{repo-name}
-git log --oneline -20
-git diff
-git pull
-git status
-```
+## Conventions & Norms
 
-**To clone a repo not yet local:**
-```cmd
-cd C:\Users\david\dev
-git clone git@bitbucket.org:cloudsee-drive/{repo-name}.git
-```
+[The unwritten rules that the team follows. Often the things new joiners trip over.]
 
-**Bitbucket REST API** (for PRs, branches, repo info without cloning):
-```cmd
-curl -u david@webapper.com https://api.bitbucket.org/2.0/repositories/cloudsee-drive
-curl -u david@webapper.com https://api.bitbucket.org/2.0/repositories/cloudsee-drive/{repo-name}/pullrequests
-```
-Note: API calls require authentication. If app passwords are configured, Desktop Commander can use them. Otherwise, use Chrome to browse PRs and pipelines.
+- [CONVENTION OR NORM]
+- [CONVENTION OR NORM]
+
+<details>
+<summary>Example</summary>
+
+- **Tickets are the source of truth.** Decisions captured in chat must be summarized in the relevant ticket within 24 hours.
+- **Comments on tickets while you work, even small updates.** Don't wait until "done" to write the first comment.
+- **Scope creep gets a new ticket.** New work doesn't get added to an in-progress estimated ticket.
+- **Time tracking matches the truth.** Don't pad. Don't shave. Hours go where the time actually went.
+- **Commit messages reference the ticket key.** `MKT-123 Fix broken UTM tags in welcome email.`
+- **No work goes in a sprint unassigned.** If it's not assigned, it's not in.
+</details>
+
+---
+
+## Process Deviations
+
+[Anything specific projects, clients, or workstreams do *differently* from the standard. Helps Claude avoid applying defaults where they don't apply.]
+
+[LIST DEVIATIONS HERE, OR DELETE THIS SECTION IF EVERYTHING FOLLOWS THE STANDARD]
+
+<details>
+<summary>Example</summary>
+
+- **Project Phoenix** runs on weekly cycles instead of 2-week sprints because the client requires weekly demos.
+- **Internal R&D** doesn't use the ticket workflow. It's tracked in a Notion doc with quarterly reviews.
+- **Production hotfixes** skip the discovery and estimation steps. They go straight from triage to in-progress.
+</details>

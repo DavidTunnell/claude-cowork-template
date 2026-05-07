@@ -1,80 +1,115 @@
 # About Me
 
-**Last Updated:** 2026-03-18
+> **How to fill this out**
+> Replace each `[BRACKETED_PLACEHOLDER]` with your own info. Drop sections that don't apply, add ones that do.
+> Or, in Cowork, just say: **"help me fill out about-me.md"** and Claude will interview you section by section.
+> The more accurate this file is, the less briefing you have to do every session.
+
+**Last Updated:** YYYY-MM-DD
 
 ## Who I Am
 
-- **Name:** David Tunnell
-- **Role:** Lead Software Architect at [Webapper Services, LLC](https://www.webapper.com/)
-- **Location:** Castroville, Texas just outside of San Antonio
-- **Education:** University of Maryland University College - Bachelor of Computer Science - Cum Laude | The University of Texas at Austin (2010–2013) - Master of Business Administration - MBA 
-- **Portfolio:** [GitHub](https://github.com/DavidTunnell) | [Stack Overflow](https://stackoverflow.com/users/1524210/david-tunnell) | [Linkedin](https://www.linkedin.com/in/david-tunnell/)
+- **Name:** [YOUR_NAME]
+- **Role:** [YOUR_TITLE] at [YOUR_COMPANY]
+- **Location:** [CITY, STATE/COUNTRY]
+- **Background:** [DEGREES, CERTIFICATIONS, OR PRIOR ROLES THAT SHAPE HOW YOU WORK]
+- **Public profiles (optional):** [LINKEDIN] | [PORTFOLIO/GITHUB/PERSONAL SITE] | [OTHER]
+
+<details>
+<summary>Example (click to expand)</summary>
+
+- **Name:** Maya Okonkwo
+- **Role:** Senior Marketing Manager at Northern Ridge Outfitters
+- **Location:** Denver, Colorado
+- **Background:** BS Communications, University of Colorado. 8 years in outdoor and lifestyle brands. Former agency strategist before going in-house.
+- **Public profiles:** [LinkedIn](#) | [Portfolio](#)
+</details>
 
 ## What I Do Day-to-Day
 
-I'm a software architect at Webapper Services, a web development and consulting company. My work spans both technical leadership and business strategy:
+[2-4 paragraphs, in your own words, about what your job actually involves. Don't write a resume. Write what you'd tell a new colleague over coffee. Cover the recurring work, the strategic work, and what you're accountable for.]
 
-- **Architecture & Design:** I design system architecture for client projects and internal products. I make technology decisions, define patterns, and ensure quality across the codebase.
-- **Agile Coaching:** I run Scrum ceremonies, coach teams on agile practices, and maintain project health. I hold a Certified Tactical Agilist certification and SAFe SPC experience.
-- **Requirements & Planning:** I write and manage requirements in Jira and Productboard, translating business needs into actionable technical work.
-- **AI Transformation:** I'm leading Webapper's transformation into an AI-native company — this is my top strategic initiative. We're going Anthropic-first with Claude Desktop, Claude Code, Claude Cowork, and Anthropic platform API calls. The vision is a full adoption roadmap: get the whole team on the tools, train everyone on effective LLM prompting and workflows, build and deploy agents that automate repetitive tasks, and stand up a central agent dashboard where every deployed agent is visible, monitored, and managed. The goal isn't to replace developers — it's to empower each person on the team to ship more, faster, and tackle work that would have been out of reach before. Long-term, the default for any new feature, project, or process should be "how can AI help us build this faster and better?" I wrote and delivered an internal AI manifesto to the team laying out this vision and the concrete steps to get there.
-- **Path to CTO:** I'm actively working toward a CTO role, which means I'm balancing hands-on technical work with strategic leadership, team development, and company-wide technology decisions.
+<details>
+<summary>Example</summary>
 
-## Primary Tech Stack
+I lead brand and lifecycle marketing for our DTC channel. My time splits roughly into three buckets: campaign planning and execution (about 50%), team management and creative review (30%), and cross-functional partnership with merchandising, ecommerce, and retail (20%).
 
-- **Frontend:** React, TypeScript, JavaScript
-- **Backend:** Node.js, TypeScript
-- **Cloud:** AWS (S3, Lambda, MySQL or DynamoDB in RDS and broader serverless patterns)
-- **Tools:** Jira, Productboard, GitHub, VS Code, Docker, Claude Code, Claude Desktop, Windows, Google Workspace, Atlassian Suite
-- **Methodologies:** Scrum, Agile Coaching
+Day-to-day that looks like writing briefs, reviewing copy and creative, sitting in on product photoshoots, running our weekly performance review with the paid media team, and pulling reporting for the leadership update. I own the email program end-to-end, co-own the editorial calendar with the content team, and I'm the marketing point of contact for any product launch.
+
+The thing I'm most accountable for is hitting our quarterly DTC revenue target while keeping brand health metrics moving in the right direction. Those two things pull against each other constantly, and my job is to find the version of every campaign that does both.
+</details>
+
+## Tools & Stack
+
+[List the tools, software, languages, or systems you use daily. This helps Claude give you advice grounded in *your* tools, not generic best practices. Include the things you're expected to be fluent in even if you don't love them.]
+
+- **Daily drivers:** [TOOLS YOU USE EVERY DAY]
+- **Frequent:** [TOOLS YOU USE WEEKLY]
+- **Occasional but important:** [TOOLS YOU TOUCH MONTHLY OR FOR SPECIFIC TASKS]
+- **Methodologies / frameworks:** [HOW YOUR TEAM ORGANIZES WORK, IF RELEVANT]
+
+<details>
+<summary>Example</summary>
+
+- **Daily drivers:** Klaviyo, Shopify, Google Analytics 4, Asana, Slack, Google Workspace, Figma (read-only)
+- **Frequent:** Looker, Meta Ads Manager, Google Ads, Northbeam, Notion (team wiki)
+- **Occasional but important:** Adobe Creative Cloud (briefing handoffs), Salesforce (B2B side), Excel for forecasting
+- **Methodologies:** Quarterly OKRs, monthly campaign cycles, weekly creative reviews. Light Agile, not strict Scrum.
+</details>
 
 ## Team Structure
 
-**US Team:**
-- **Patrick Quinn** — CEO (pquinn@webapper.com)
-- **Scott Herring** — COO / Marketing / Sales / SEO (scott@webapper.com)
-- **Joy Miller** — Technical PM, Scrum Master, Manual Tester, SME of VisionAST (joy@webapper.net)
-- **Daniela Camargo** — PM, Scrum Master, Manual Tester, SME of CloudSee (daniela@webapper.net)
-- **David Tunnell (me)** — Lead Software Architect (david@webapper.com)
+[Who you work with. Reporting structure, peers, direct reports. Names and emails are useful for Claude to recognize when you reference them. Skip names if you'd rather, just describe the shape of your team.]
 
-**Vietnam Team (VTeam):**
-- **Steven** — Tech Lead, all projects
-- **Ann** — Sr. Dev, VisionAST
-- **Peter** — Sr. Dev, CloudSee Drive (also helps with VisionAST onboardings)
-- **Kevin** — Sr. Dev, transitioning from EDS contract into AI initiative
-- **Henry** — SDET, Documentation, Selenium, Unit Tests, DevOps
-- **Max** — Jr/Mid Dev, CloudSee Drive
+- **My manager:** [NAME, TITLE]
+- **My peers:** [NAMES OR ROLES]
+- **My direct reports:** [NAMES OR ROLES]
+- **Cross-functional partners I work with regularly:** [NAMES OR TEAMS]
 
-## Our Product — CloudSee Drive
+<details>
+<summary>Example</summary>
 
-Webapper's flagship SaaS product. Browser-based interface for Amazon S3 storage, available on the AWS Marketplace. React frontend, Node.js serverless backend (Lambda/DynamoDB/OpenSearch). The strategic goal is for CloudSee Drive to replace client services revenue and become Webapper's primary business. See `PROJECTS/CloudSee Drive/project-context.md` for full architecture, team, active work, and deployment details.
-
-## Client Project — VisionAST
-
-Webapper's primary client project. Data analytics platform for automotive and powersports dealerships (SalesVision, PowerVision, FinanceVision, ServiceVision, MenuVision). Legacy CFML/Lucee on Aurora MySQL with a long-term modernization plan. Integrates with 12+ DMS systems. See `PROJECTS/VisionAST/project-context.md` for full architecture, team, active work, and deployment details.
-
-## AWS Hosting Customers
-
-Webapper also provides AWS hosting services for several clients:
-
-- **[Atlantic British / RoverParts](https://www.roverparts.com/)** — Specialized retailer for Land Rover and Range Rover parts and accessories, with 11,000+ parts across two US warehouses.
-- **[Icon Media](https://www.icon-media.com/)** — Full-service advertising agency in Anaheim Hills, CA specializing in the automotive aftermarket industry, including their iConfigurators visual software.
-- **[eRep](https://erep.com/)** — Psychometric assessment platform offering the Core Values Index (CVI) for hiring and employee engagement.
-
-## Other Client Work
-
-- **[Educational Data Services (EDS)](https://www.ed-data.com/)** — Cooperative procurement platform for schools and public entities. Webapper was modernizing their systems (Azure-based). Relationship ending after ~2.5 years; Kevin is transitioning off this contract.
+- **My manager:** Priya Shah, VP Marketing
+- **My peers:** Tom Reyes (Performance Marketing Manager), Wei Chen (Content Manager), Devon Park (Creative Director)
+- **My direct reports:** Sam Liu (Email Marketing Specialist), Jordan Wright (Marketing Coordinator)
+- **Cross-functional partners:** Aiden Cole (DTC Ecommerce Lead), Hannah Brooks (Senior Merchandiser), the retail ops team for store-tied campaigns
+</details>
 
 ## Current Priorities
 
-1. Leading AI transformation at Webapper Services
-2. Architecting and shipping client projects
-3. Building AI first systems and processes that scale as I move into a CTO role. Replacing company processes with standardized agents across the company.
-4. Staying sharp on full-stack development using Claude Code while expanding leadership scope
+[The 3-5 things you're actively pushing on right now. What would you say if your CEO asked "what are you focused on this quarter?"]
+
+1. [PRIORITY ONE]
+2. [PRIORITY TWO]
+3. [PRIORITY THREE]
+
+<details>
+<summary>Example</summary>
+
+1. Launching the fall campaign on time and on budget, hitting a 15% lift in DTC revenue YoY
+2. Rebuilding our welcome email series. The current version is two years old and underperforming benchmark
+3. Hiring a senior content strategist to take editorial off my plate
+4. Standing up a weekly cross-functional sync between marketing, merchandising, and ecommerce so we stop finding out about product launches the week before
+</details>
 
 ## What I Care About
 
-- Clean, maintainable architecture over clever hacks
-- Teams that ship reliably through good process
-- Practical AI adoption — tools that actually save time, not hype
-- Clear communication between technical and non-technical stakeholders
+[Your values and working principles. The stuff you optimize for when there's a tradeoff. Helps Claude give advice that fits how you actually want to work.]
+
+- [VALUE OR PRINCIPLE ONE]
+- [VALUE OR PRINCIPLE TWO]
+- [VALUE OR PRINCIPLE THREE]
+
+<details>
+<summary>Example</summary>
+
+- Long-term brand health over short-term revenue spikes
+- Clear, kind communication with my team. No surprises in 1:1s
+- Data informs decisions; it doesn't replace judgment
+- Get to a decision and move. I'd rather be 80% right and shipping than 100% right and stalled
+- Good work shows up in the customer experience, not in the slide deck
+</details>
+
+## Optional: Anything Else Worth Knowing
+
+[Anything that doesn't fit above but matters. Time zone, working hours, accessibility needs, the project that's eating your life right now, a constraint Claude should know about. Delete this section if you don't need it.]

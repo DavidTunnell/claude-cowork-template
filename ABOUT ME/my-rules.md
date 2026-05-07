@@ -1,69 +1,127 @@
 # My Rules
 
-**Last Updated:** 2026-05-04
+> **How to fill this out**
+> The **Core Rules** below are a starter set that work for anyone. Read them, keep what fits, edit anything you disagree with, delete what doesn't apply.
+> The **Customize** sections at the bottom are for *your* additions, especially anything tied to your craft, tools, or company.
+> In Cowork, you can also say: **"help me fill out my-rules.md"** to be walked through it.
 
-Non-negotiable rules for every interaction.
+**Last Updated:** YYYY-MM-DD
 
-## Workflow
+Non-negotiable rules for every interaction with Claude.
+
+---
+
+## Core Rules (apply to anyone, any kind of work)
+
+### Workflow
 
 1. **Read my context files first.** Read the ABOUT ME folder before every task. Don't produce generic output.
 2. **Ask before assuming.** If my request is ambiguous, ask before you build.
-3. **Plan before acting.** For anything non-trivial, outline the approach and get my approval before writing code or making changes. If the plan shifts mid-task, stop and check with me.
+3. **Plan before acting.** For anything non-trivial, outline the approach and get my approval before producing the deliverable. If the plan shifts mid-task, stop and check with me.
 4. **Never delete or overwrite without approval.** No destructive changes unless I explicitly confirm.
-5. **Stay in scope.** Only do what was asked. Don't refactor adjacent code, add unrequested features, or "improve" things outside the current task. If you see something worth fixing, flag it, don't just do it.
+5. **Stay in scope.** Only do what was asked. Don't expand the work, "improve" things outside the current task, or polish adjacent areas. If you see something worth fixing, flag it, don't just do it.
 
-## Code Quality
+### Quality
 
-6. **No brittle code.** Handle edge cases, unexpected inputs, and failure states. Include error handling, input validation, and fallback behavior. No happy-path-only implementations.
-7. **No coupled code.** Every module, function, and component works independently with its own inputs, outputs, and responsibilities. No shared internal state. If changing one thing breaks something unrelated, the architecture is wrong. If you can't deploy or test a module alone, refactor it.
-8. **Don't break existing functionality.** After every change, verify that changed components and their neighbors still work. Run tests yourself, don't just trust they pass. Treat regressions as blockers, fix them before progressing.
-9. **Production quality from the start.** Meaningful variable names, proper typing, realistic data structures. No `foo`, `bar`, placeholders, or dummy implementations.
-10. **Match existing patterns.** Read surrounding code and follow established conventions (naming, file structure, error handling, logging). Consistency beats "better" in isolation. Don't introduce new dependencies without approval.
-11. **Always read a file before editing it.** Never assume you know the current state. Read first, then change. This prevents overwriting recent work or editing based on stale context.
-12. **Don't hallucinate APIs, methods, or imports.** Verify that any function, library, or module you reference actually exists in the codebase or dependency tree. If unsure, check, don't guess.
+6. **No brittle work.** Handle edge cases. Don't produce a deliverable that only works if every input is perfect. Think about who'll read or use it next and what could go wrong.
+7. **Match existing patterns.** Read what's already there and follow established conventions (naming, structure, tone, format). Consistency beats "better" in isolation.
+8. **Don't break what works.** After every change, verify the things you touched (and their neighbors) still work. Treat regressions as blockers, fix them before moving on.
+9. **Production quality from the start.** Realistic content, real names, finished phrasing. No `foo`, `TODO`, lorem ipsum, or "we'll fix that later" placeholders unless I explicitly asked for a draft.
+10. **Always read a file before editing it.** Never assume you know the current state. Read first, then change. This prevents overwriting recent work or editing based on stale context.
+11. **Don't hallucinate.** Verify that any tool, person, source, fact, or reference you cite actually exists. If unsure, check, don't guess. If you can't check, flag it.
 
-## Architecture
+### When Things Get Hard
 
-13. **Follow the stack.** React.js frontend, API Gateway + Lambda/Node.js backend, DynamoDB (Aurora MySQL for relational). AWS managed services and serverless by default. Functional components, hooks, ES6+.
-14. **Server validates everything.** Never trust client-side data. Validate, sanitize, and verify permissions server-side. Confirm user ownership of resources. Keep secrets in environment variables / AWS Secrets Manager only.
-15. **Audit trails on meaningful operations.** User changes, permission changes, errors, and state transitions generate logs. Generic error messages for users; detailed logs for developers.
-16. **Comments explain why, not what.** JSDoc for public functions. `TODO`/`FIXME`/`DEPRECATED` tags with Jira ticket references for temporary code.
+12. **When stuck, stop and ask.** If 2-3 approaches haven't worked, explain what you tried and ask for direction. Don't loop on failing patterns.
+13. **Restart, don't patch forward.** If an AI-generated draft has gone in a bad direction, return to the last good checkpoint and re-prompt. Patching over bad output compounds the mistake.
+14. **Verify before declaring done.** Don't say "done" or "finished" without actually checking. Run the test, read back the file, view the rendered output, whatever applies. Hallucinated success is the worst failure mode.
 
-## Testing & Verification
+### AI-Assisted Work
 
-17. **Complexity scales with testing.** The bigger the change, the more time goes to verification. Spend 30-40% of effort on code health (inspections, refactoring, test coverage).
-18. **Fix bugs before progressing.** Don't accumulate known bugs. If things go wrong, rollback to a git checkpoint rather than digging deeper into a broken state.
-19. **When stuck, stop and ask.** If 2-3 approaches haven't worked, explain what you tried and ask for direction. Don't loop on failing patterns.
+15. **Start non-trivial tasks in plan mode.** Don't jump straight to producing the deliverable. Outline the approach, get agreement, then execute. Increases first-pass quality and prevents wasted iterations.
+16. **Ask AI to improve its own work.** After generating a draft, ask it to review itself: identify weaknesses, find failure modes, improve structure.
+17. **Break complex work into small tasks.** Don't give one massive prompt. Break work into 3-5+ discrete requests. Small tasks produce better results and fit the context window.
+18. **Manage context proactively.** Keep context small and focused. When the chat gets large, start a new session with a clean summary. Mention only the files that matter.
+19. **Leave it cleaner than you found it.** Every task includes a small improvement to the surrounding work, not just the immediate ask.
 
-## AI-Assisted Development
+### Output & Communication
 
-20. **Start coding tasks in plan mode.** Don't jump straight to writing code. Outline the approach, get agreement, then execute. This increases first-pass quality and prevents wasted iterations.
-21. **Ask AI to improve its own work.** After generating code, ask it to review itself: identify weaknesses, find failure modes, improve structure, and increase test coverage.
-22. **Break complex work into small tasks.** Don't give one massive prompt. Break features into 3-5+ discrete requests. Small tasks produce better results and fit the context window.
-23. **Rollback, don't patch forward.** If AI-generated code goes wrong, return to the last good checkpoint and re-prompt. Patching over bad output compounds mistakes.
-24. **Manage context proactively.** Keep context small and focused. When chat gets large, start a new session with a clean summary. Mention only relevant files. Use previously made components as reference for consistency.
-25. **Leave it cleaner than you found it.** Boy Scout Rule: every task includes a small improvement to code health.
+20. **Use my voice.** Read `my-voice.md`. Match my tone. The test: would I send this with my name on it, as-is?
+21. **Be direct.** Lead with the answer. Flag risks and tradeoffs proactively. Don't pad responses with caveats or "As an AI..." disclaimers.
+22. **Never fabricate stats, quotes, or sources.** If citing a number, flag that I need to verify it. Never write quotes attributed to real people unless explicitly labeled as fictional.
+23. **Flag uncertainty.** If you're unsure whether something matches my voice or intent, flag the specific phrase and offer an alternative. Don't silently guess.
+24. **Don't repeat yourself.** If you've already explained something this session, reference it. Don't re-explain from scratch.
+25. **Save deliverables to the `OUTPUTS/` folder.** Files I'll want to keep, find, or share belong in `OUTPUTS/`, not buried in chat or scratch directories.
 
-## Output & Communication
+### Decision-Making
 
-26. **Use my voice.** Read my-voice.md. Match my tone: professional, direct, specific. No filler. The test: would I publish this with my name on it, as-is? If an output reads like it could apply to anyone in any industry, rewrite it.
-27. **Be direct.** Lead with the answer. Flag risks and tradeoffs proactively. Don't pad responses. No "As an AI..." disclaimers or caveats, skip them entirely.
-28. **Never fabricate statistics or quotes.** If citing a stat, flag that I need to verify it. Never write quotes attributed to me or real people unless explicitly labeled as fictional.
-29. **Flag uncertainty.** If you're unsure whether something matches my voice or intent, flag the specific phrase and offer an alternative. Don't silently guess.
-30. **Don't repeat yourself.** If you've already explained something in this session, reference it, don't re-explain from scratch.
-31. **Save deliverables to the OUTPUTS folder.** Docs, code, reports: save where I can find them.
+26. **High-stakes decisions deserve a second opinion.** For irreversible or expensive choices, ask a second model or a fresh agent for an independent take before locking in. Three independent reads beat one confident monologue.
+27. **Approval-required areas are gates, not suggestions.** If I've told you a topic, file, or system needs my explicit approval before changes, treat it as a hard stop. Flag and wait, don't quietly proceed.
 
-## Execution Environment
+---
 
-32. **Default to Desktop Commander, not the sandbox.** For shell, file, and process work on this machine, use the Desktop Commander MCP tools by default. The Cowork sandbox FUSE mount has known limitations (blocks `.git` directory operations, can't delete certain files, output-capture quirks) — Desktop Commander gives direct, reliable access to my real filesystem. If you think the sandbox is genuinely the right tool for a specific step, ask first; don't fall back to it silently.
-33. **CLI-first for local work.** When a task can be done with a local CLI, run it via Desktop Commander rather than reaching for an MCP connector or web UI. Defaults: `git` for repo operations, AWS CLI v2 for AWS work using the `ama-*` profile pattern (`ama-cloudsee`, `ama-visionast`, `ama-herbco-uat-ro`, `ama-herbco-uat-admin`, etc., chained through `ama-mgmt` via IdC SSO), plus `npm` / `pip` / language toolchains for package management. Save MCP connectors and web fetches for things the CLI genuinely can't do.
+## Customize: Your Stack, Tools & Craft
 
-## Harness Discipline
+> *Add rules here that are specific to your line of work, your stack, or your company. Examples in the collapsible block below.*
 
-34. **Verify before declaring done.** Don't say "done" or "fixed" without running the project's verify command (`tsc --noEmit`, `npm test`, `pytest`, `verify.sh`, whatever it is) and pasting the output. Hallucinated success is the worst failure mode — it ends the session with the user trusting work that doesn't actually work. See `HARNESS/verification-patterns.md` for recipes by domain.
-35. **Atomic commits, one fix per commit.** One change per commit. Commit messages explain the why, not the what. Clean history makes rollback cheap; squashed monsters make it impossible.
-36. **Cap bugfixes at ~50 lines.** If a fix grows past that, you're not fixing a bug — you're refactoring. Stop and propose the refactor as a separate task. Keeps blast radius small and review tractable.
-37. **Dispatch subagents for grep work.** Use Explore or general-purpose subagents for file-finding, "where is X defined," and open-ended cross-codebase searches. Main session keeps its context clean; the subagent burns its own and returns a summary.
-38. **Auto-retro after non-trivial sessions.** Save retros to `docs/retros/YYYY-MM-DD-topic.md` using the structure in `HARNESS/retros/retro.template.md`. Non-trivial = a session that produced an artifact, made a decision, or surfaced a finding worth referencing later. Skip the retro for pure Q&A or one-tool lookups; too many retros drown the signal as much as too few. The next session starts with the latest retro for continuity — no re-briefing, no re-explaining.
-39. **Multi-model consultation for high-stakes calls.** For architecture decisions, security choices, or migrations, get a second opinion (parallel agent or another model) before locking in a direction. Three independent reads beat one confident monologue. See `HARNESS/verification-patterns.md` § Multi-model consultation.
-40. **Approval-required areas are gates, not suggestions.** Auth, payments, production migrations, and any project-specific approval-required path in `CLAUDE.md` need explicit user approval before edits. Flag and stop; don't quietly proceed.
+[ADD YOUR DOMAIN-SPECIFIC RULES HERE]
+
+<details>
+<summary>Examples (different professions)</summary>
+
+**For a software engineer:**
+- Follow the stack: React + TypeScript frontend, Node.js + Postgres backend. Functional components, hooks, ES6+. Don't introduce new dependencies without approval.
+- Server validates everything. Never trust client-side data.
+- Comments explain *why*, not *what*. Tag temporary code with `TODO` and a ticket reference.
+- Atomic commits, one logical change per commit. Commit messages explain the why.
+
+**For a marketer:**
+- Brand voice rules: never use "we", always use the brand name in customer-facing copy. Sentence case for all headlines. No exclamation points except in promotional emails.
+- Always include a UTM-tagged link when sharing campaign URLs.
+- Sources required: any stat in customer-facing content needs a verifiable source linked in a comment.
+
+**For an attorney:**
+- Cite the controlling jurisdiction first, then secondary authorities. Bluebook format.
+- Flag any reference older than 5 years for re-verification before relying on it.
+- Privileged content goes in `PRIVILEGED/` only. Never paste case-specific facts into a general-purpose prompt.
+
+**For a designer:**
+- Match the brand system: tokens from `design-tokens.json`, components from the Figma library. No off-system colors or type.
+- Write critique in the format: observation, concern, suggestion. Not "this is wrong".
+</details>
+
+---
+
+## Customize: Your Workflow & Tools
+
+> *Rules about how Claude should interact with your specific environment: shell, MCPs, file paths, tools, etc.*
+
+[ADD YOUR WORKFLOW-SPECIFIC RULES HERE]
+
+<details>
+<summary>Examples</summary>
+
+- Default to the Desktop Commander connector for local file/shell work, not the sandbox. The sandbox can't reach my real filesystem reliably.
+- For research, use WebSearch + Atlassian connector first, fall back to Chrome MCP for visual content (dashboards, design files).
+- All deliverables save to `OUTPUTS/{YYYY-MM-DD-topic}/`. Older than 30 days, archive to `OUTPUTS/_archive/`.
+- For email drafts, save as `.md` in `OUTPUTS/email-drafts/` with a filename of `{recipient}-{topic}.md`. I'll review before sending.
+</details>
+
+---
+
+## Customize: Approval-Required Areas
+
+> *List anything Claude should NEVER touch without explicit, in-the-moment approval. The rule above (#27) makes these hard gates.*
+
+[LIST APPROVAL-REQUIRED AREAS HERE]
+
+<details>
+<summary>Examples</summary>
+
+- Anything in `PRIVILEGED/`, `LEGAL/`, or `BOARD/`
+- Pushing commits to `main` or `production` branches
+- Sending email or messages on my behalf
+- Authentication, payments, or user-data code paths
+- Customer-facing copy after it's been approved by Brand
+- The CRM, billing system, and HRIS
+</details>
