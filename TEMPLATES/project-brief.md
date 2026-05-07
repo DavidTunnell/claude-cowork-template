@@ -1,68 +1,95 @@
-# Project Brief Template
+# Project Brief: [PROJECT NAME]
 
-**Last Updated:** 2026-03-18
+> **How to use this template**
+> A project brief is the document you write *before* a project starts. It's the contract: what we're doing, why, what success looks like, what's out of scope.
+> Use it to kick off a new project, align stakeholders, and write a one-pager you can send around.
+> Copy this into the project's folder under `PROJECTS/[PROJECT NAME]/` next to `project-context.md`.
 
-## Project Name
-[Project name]
+**Last Updated:** YYYY-MM-DD
+
+---
+
+## One-Sentence Vision
+
+[The single bolded sentence that captures the entire point of this project. If you can't get there in one sentence, the project isn't scoped yet.]
 
 ## Overview
-[2-3 sentences describing what this project is and why it exists.]
+
+[2-3 sentences describing what this project is and why it exists *now*.]
 
 ## Business Context
-- **Client / Stakeholder:** [Who is this for?]
-- **Problem:** [What problem does this solve?]
-- **Success Criteria:** [How do we know when this is done and done well?]
 
-## Technical Scope
+- **Client / sponsor / stakeholder:** [Who is this for, internally or externally?]
+- **Problem we're solving:** [What's broken, missing, or underperforming today?]
+- **Cost of not doing it:** [What happens if we don't do this, or do nothing?]
+- **Success criteria:** [How do we know this is done *and* done well? Make it measurable when you can.]
 
-### What We're Building
-[Describe the deliverable — app, feature, integration, migration, etc.]
+## Scope
 
-### Tech Stack
-- **Frontend:** [e.g., React, TypeScript, Tailwind]
-- **Backend:** [e.g., Node.js, Express, TypeScript]
-- **Infrastructure:** [e.g., AWS Lambda, S3, RDS]
-- **Third-Party Services:** [e.g., Stripe, Auth0, SendGrid]
+### What We're Doing
+[Describe the actual deliverable. App, feature, campaign, migration, redesign, integration, etc. Be concrete.]
 
-### Key Architecture Decisions
+### Must Have (v1 / MVP)
+1. [REQUIREMENT]
+2. [REQUIREMENT]
 
-For each major technical decision, document what was chosen and why.
-
-#### [Decision Title]
-**Decision:** [What we chose and why in 1-2 sentences]
-
-| Option | Pros | Cons | Effort |
-|--------|------|------|--------|
-| [Option A] | | | Low / Med / High |
-| [Option B] | | | Low / Med / High |
-
-**Tradeoffs:** [What we give up with this choice]
-
-## Requirements
-
-### Must Have (MVP)
-1. [Requirement]
-2. [Requirement]
-
-### Should Have (Post-MVP)
-1. [Requirement]
+### Should Have (after v1)
+1. [REQUIREMENT]
 
 ### Out of Scope
-- [Explicitly list what this project does NOT include]
+- [WHAT THIS PROJECT EXPLICITLY DOES NOT INCLUDE — protects you from scope creep]
+
+## Approach
+
+[High-level plan for how we'll get there. For software: architecture and stack. For a campaign: channel mix and creative direction. For an initiative: phases and methodology.]
+
+### Key Decisions
+
+[For each major decision, document what you chose and why. The "why" matters more than the "what" for future you.]
+
+#### [DECISION TITLE]
+**Decision:** [WHAT YOU CHOSE]
+
+| Option | Pros | Cons | Effort / Cost |
+|---|---|---|---|
+| [OPTION A] | | | Low / Med / High |
+| [OPTION B] | | | Low / Med / High |
+
+**Why this one:** [THE REASONING]
+**Tradeoffs:** [WHAT YOU'RE GIVING UP]
+
+## Tools & Stack (if applicable)
+
+- **Primary tools:**
+- **Tech stack (for software):**
+- **Vendors / partners:**
+- **Internal systems touched:**
 
 ## Timeline & Milestones
+
 | Milestone | Target Date | Notes |
-|-----------|-------------|-------|
+|---|---|---|
 | Kickoff | | |
-| MVP Complete | | |
-| Testing / QA | | |
-| Launch | | |
+| [PHASE 1] | | |
+| [PHASE 2] | | |
+| Launch / Delivery | | |
+
+## Resources & Budget
+
+- **Team allocated:** [WHO, AT WHAT % CAPACITY]
+- **Budget:** [DOLLARS, IF APPLICABLE]
+- **External dependencies:** [VENDORS, AGENCIES, OTHER TEAMS]
 
 ## Risks & Open Questions
-- [Risk or unanswered question]
+
+| Risk / Question | Likelihood | Impact | Mitigation / Owner |
+|---|---|---|---|
+| | | | |
 
 ## Links & Resources
-- Jira Board: [URL]
-- Figma / Design: [URL]
-- Repo: [URL]
-- Productboard: [URL]
+
+- **Tracker:**
+- **Wiki / docs:**
+- **Designs / assets:**
+- **Repo (if applicable):**
+- **Roadmap / strategic doc:**
