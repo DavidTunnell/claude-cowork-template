@@ -1,6 +1,6 @@
 ---
 name: harness-setup
-description: Apply the Webapper harness (CLAUDE.md, typed memory, retros, MCPs, verify-before-done) to a project. Use when starting a new project repo, when an existing repo has no harness, or when a session is going off the rails because there's no continuity scaffold. Trigger phrases - "set up the harness", "scaffold CLAUDE.md", "harness this project", "wire up memory and retros".
+description: Apply the project harness (CLAUDE.md, typed memory, retros, MCPs, verify-before-done) to a software project. Use when starting a new project repo, when an existing repo has no harness, or when a session is going off the rails because there's no continuity scaffold. Trigger phrases - "set up the harness", "scaffold CLAUDE.md", "harness this project", "wire up memory and retros".
 ---
 
 # Harness Setup
@@ -38,7 +38,7 @@ Choose the path based on environment:
 
 - **Cowork (project repo is yours):** `<repo>/memory/`
 - **Claude Code (project repo is yours):** `~/.claude/projects/<slug>/memory/`
-- **Client engagement (source repo is not yours, e.g., iBizFusion at `dev\ibizfusion`):** memory lives alongside the project's harness folder, e.g., `PROJECTS/<name>/memory/` in claude-cowork-template. The CLAUDE.md goes in the harness folder; copy it into the source repo only if you have write access and approval.
+- **Client engagement (source repo is not yours):** memory lives alongside the project's harness folder, e.g., `PROJECTS/<name>/memory/` in this template repo. The CLAUDE.md goes in the harness folder; copy it into the source repo only if you have write access and approval.
 
 Seed with the **minimum four** below, plus any **applicable extensions** that match the project:
 

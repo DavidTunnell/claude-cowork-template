@@ -62,8 +62,8 @@ Type-check + tests aren't enough. You also need:
 ## AWS / infra changes
 
 ```
-aws <command> --profile ama-<project> --dry-run
-aws <command> --profile ama-<project>
+aws <command> --profile <project-profile> --dry-run
+aws <command> --profile <project-profile>
 ```
 
 - **Always `--dry-run` first** if the AWS service supports it (CloudFormation, S3, Lambda for some operations).

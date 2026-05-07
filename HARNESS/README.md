@@ -1,5 +1,9 @@
 # HARNESS
 
+> **⚠ Optional and software-focused.** This subsystem is built for *coding work* — software projects with code repos, build pipelines, and verifiable outputs. If you're not doing technical/coding work in this template, you can skip this entire folder. Delete it if you'd like; nothing else in the template depends on it.
+>
+> **What it gives software teams:** a consistent way to bootstrap a project so Claude sessions stay grounded across days, machines, and context switches. Memory files Claude reads at session start, a verify-before-done discipline, retros for continuity, and a curated MCP shortlist.
+
 **Last Updated:** 2026-05-04
 
 The harness is the *thin layer around the model* that determines whether Claude is useful or noisy. Memory, rules, verification, retros, MCPs, subagent dispatch — that's the harness. The model itself is held constant; only the harness changes.
@@ -51,4 +55,4 @@ These are isolated to `claude-code-extras/` so the rest of the harness is portab
 
 ## Source
 
-The structure is adapted from a community-written Claude Code harness post and pruned to what actually translates to Webapper's environment (Cowork primary, Claude Code secondary). Specific tooling claims from the source post have been kept where they generalize and dropped where they were too tied to one project's stack.
+The structure draws from a community-written Claude Code harness pattern and has been adapted for cross-project, cross-environment use. Specific tooling claims have been kept where they generalize and dropped where they tied too closely to one team's stack.
