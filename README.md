@@ -1,67 +1,112 @@
 # Claude Cowork Template
 
-**Last Updated:** 2026-03-19
+A drop-in context folder for Claude Cowork. Instead of writing long prompts every session, Claude reads these files at the start of every task to understand who you are, how you work, and what you expect. **Short prompts in, better output out.**
 
-## What This Is
+This template is designed to work for **anyone, in any company, doing any kind of work** — engineers, marketers, project managers, analysts, attorneys, designers, founders, operations leads. It's not software-specific (the one section that is, `HARNESS/`, is clearly marked optional).
 
-This is your master context folder for Claude Cowork. Instead of writing long prompts every session, Claude reads these files to understand who you are, how you work, and what you expect. Short prompts, better output.
+You can fill it in **manually** by editing the markdown files, or **via AI interview** by asking Claude in Cowork: *"help me fill out about-me.md"*. Most people end up doing a mix.
 
-## Folder Structure
+---
+
+## Quick Start (about 10 minutes)
+
+1. **Clone or download this repo** to your machine.
+2. **Point Claude Cowork at the folder** as a working folder. Open the Cowork tab in the Claude desktop app, start a new task, select this folder when prompted.
+3. **Set your global instructions** (one-time, in Settings → Cowork → Edit Global Instructions). Suggested baseline:
+
+    ```
+    Read my ABOUT ME files before every task. Ask clarifying questions before executing.
+    Show a plan before acting. Never delete or overwrite without my approval.
+    Save deliverables to the OUTPUTS folder.
+    ```
+
+4. **Fill out the four ABOUT ME files.** In Cowork, start with: *"help me fill out about-me.md"*. Then move to `my-rules.md`, `my-voice.md`, `our-process.md`. Or just open them and edit by hand. Either works.
+5. **Optional: add your projects.** Copy `TEMPLATES/project-context.md` into a new folder under `PROJECTS/` for each ongoing project, account, or initiative you want Claude to know about.
+
+That's it. Every future Cowork session pointed at this folder will read the context and use it.
+
+---
+
+## Folder structure
 
 ```
 claude-cowork-template/
 ├── ABOUT ME/
-│   ├── about-me.md        — Role, company, team, stack, priorities
-│   ├── my-voice.md        — Tone, style, patterns by audience, things to avoid
-│   ├── my-rules.md        — 29 non-negotiable rules for every interaction
-│   └── our-process.md     — Webapper Agile Guide (WAG) process overview
+│   ├── about-me.md         — Who you are, role, team, tools, priorities
+│   ├── my-voice.md         — Tone, style, patterns by audience, things to avoid
+│   ├── my-rules.md         — Default rules + your customizations
+│   └── our-process.md      — How your team works (cadence, ceremonies, tools)
 ├── PROJECTS/
-│   ├── CloudSee Drive/
-│   │   └── project-context.md — Architecture, team, active work, deployment
-│   └── VisionAST/
-│       └── project-context.md — Architecture, team, active work, deployment
+│   ├── README.md           — How to populate this folder
+│   └── Example Project/    — Fully filled-out non-software example you can imitate
 ├── TEMPLATES/
-│   ├── project-brief.md       — Template for kicking off new projects
-│   ├── project-context.md     — Template for documenting project architecture and context
-│   └── jira-ticket.md         — Template for writing structured Jira tickets
-├── OUTPUTS/               — Where Claude saves finished deliverables
-└── README.md              — This file
+│   ├── project-context.md  — Template for documenting an ongoing project
+│   ├── project-brief.md    — Template for kicking off a new project
+│   └── jira-ticket.md      — Template for writing structured tickets
+├── HARNESS/                — Optional. Software/coding-specific scaffolding for project repos.
+├── OUTPUTS/                — Where Claude saves deliverables you want to find later
+└── README.md               — This file
 ```
 
-## How to Connect This to Cowork
+---
 
-1. Open the Claude desktop app.
-2. Click the **Cowork** tab at the top.
-3. When prompted to select a folder, point it to this `claude-cowork-template` folder.
-4. Claude will now read your context files before every task.
+## How to use it day-to-day
 
-## Recommended Model Settings
+- **Starting work on something?** Just describe what you need. Claude already knows your role, tools, voice, and rules.
+- **Working on a specific project?** Tell Claude which one. It will read the project-context file for that project (team, stack, status, decisions) before doing anything.
+- **Starting a new project?** Copy `TEMPLATES/project-brief.md` into a new folder under `PROJECTS/` and use it to define the project.
+- **Getting an output you'll want to keep?** Claude saves to `OUTPUTS/` so things don't get buried in chat.
+- **Something feels off?** Open the relevant markdown file (your voice, your rules, the project context) and edit. The next session will pick up the change.
 
-- **Model:** Opus 4.6
-- **Extended Thinking:** ON
-- Don't change these between sessions.
+---
 
-## Global Instructions (Set Once)
+## Filling it out: manual vs. AI-interview
 
-Go to **Settings > Cowork > Edit Global Instructions** and paste:
+Each file in `ABOUT ME/` opens with a "How to fill this out" callout. The pattern is the same:
 
-```
-I'm David, Lead Software Architect at Webapper Services. Read my ABOUT ME files before every task. Ask clarifying questions before executing. Show a plan before acting. Never delete without my approval.
-```
+- **Manual:** Open the file, replace each `[BRACKETED_PLACEHOLDER]` with your info, expand or delete the example block, save.
+- **AI-interview:** In Cowork, say *"help me fill out [filename]"*. Claude will ask you questions one at a time and update the file as you go. Faster than staring at blanks.
 
-## How to Use This
+Some files (especially `my-voice.md`) are easier to write *from* something than *toward* something. The trick: have Claude read your real writing first.
 
-- **Starting a new project?** Copy `TEMPLATES/project-brief.md` into a new subfolder under `PROJECTS/` and fill it in.
-- **Documenting project architecture?** Copy `TEMPLATES/project-context.md` into the project subfolder. See the CloudSee Drive and VisionAST examples.
-- **Writing Jira tickets?** Use `TEMPLATES/jira-ticket.md` or ask Claude to write one. It follows the template pattern.
-- **Need Claude to produce a file?** It saves to `OUTPUTS/` automatically (per my-rules.md rule #29).
-- **Working on a specific project?** Tell Claude which project. It will read the relevant project-context.md for architecture, team, and deployment details.
+> *Connect to my email and read my last 50 sent messages. Then propose patterns for my-voice.md based on how I actually write. Show me the diff before saving.*
 
-## Customizing
+That kind of prompt produces a voice file that actually sounds like you, not generic advice.
 
-These files are meant to evolve. Update them as your role, stack, or preferences change. The more accurate your context files are, the less prompting you need to do.
+---
 
-Key files to keep current:
-- `about-me.md` when your role, team, or priorities shift
-- `my-rules.md` when you discover new patterns that improve AI output
-- Project context files when architecture, team assignments, or active work changes
+## Recommended model settings
+
+Use the strongest available Claude model and turn on **Extended Thinking** for any non-trivial task. Don't change models between sessions in the same project — context handoff is cleaner with consistency.
+
+---
+
+## Customizing this template
+
+This is a starting point, not a final destination. Edit anything. Add files. Delete sections. Reorganize.
+
+The most common customizations:
+
+- Adding domain-specific files under `ABOUT ME/` (e.g., `my-design-system.md` for designers, `my-research-methods.md` for researchers, `my-clients.md` for consultants)
+- Adding a `PRIVILEGED/` or `LEGAL/` folder for sensitive content with a clear "approval required" note in `my-rules.md`
+- Replacing `OUTPUTS/` with a deeper structure (e.g., `OUTPUTS/{YYYY-MM-DD-topic}/`) once you've done enough work to know what you save
+
+Treat this template the way you'd treat a notebook: useful when it reflects how *you* think, not how the original author thought.
+
+---
+
+## Sharing with your team
+
+If a few people on your team want to use the same starting point:
+
+1. Each person clones the template into their own folder.
+2. Each person fills out their personal `ABOUT ME/` files separately. Voice and rules are personal; they shouldn't be shared.
+3. Optionally share `our-process.md` and `PROJECTS/*` if your team works on the same projects. One person can fill these in and send the markdown to others, who paste them into their own folders.
+
+The template is designed to be easy to fork. The personal files (`about-me.md`, `my-voice.md`, `my-rules.md`) and the shared files (`our-process.md`, `PROJECTS/*`) live together but are independent.
+
+---
+
+## License
+
+This template is provided as-is to help anyone bootstrap a useful Claude Cowork context folder. Adapt it however you want.
