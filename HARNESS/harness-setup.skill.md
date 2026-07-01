@@ -55,6 +55,7 @@ Seed with the **minimum four** below, plus any **applicable extensions** that ma
 - `reference_jira_workflow.md` — for projects with a Jira project key. Ticket workflow, sprint cadence, custom fields, JQL filters used.
 - `reference_payment_systems.md` — for projects touching Stripe / Authorize.Net / similar. Tokenization patterns, webhook endpoints, test card data.
 - `reference_integrations.md` — for projects with non-trivial third-party APIs. Endpoint maps, auth flows, retry behavior.
+- `project_release_process.md` — for projects with non-trivial deploy flows (multiple environments, branch protection, PR review, scheduled releases). Sprint cadence, ticket workflow, branch flow, per-environment deploy targets, who deploys what, release strategy.
 
 **Verify:** `ls memory/` shows the minimum four plus any extensions. `MEMORY.md` lists every file with a one-line summary.
 

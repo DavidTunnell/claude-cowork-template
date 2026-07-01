@@ -1,6 +1,8 @@
-# Project Context: VisionAST
+# Project Context: VisionAST  *(WINDING DOWN — 2026)*
 
-**Last Updated:** 2026-03-18
+**Last Updated:** 2026-07-01
+
+> **Status (2026-07-01):** This engagement is winding down — VisionAST's customers are migrating to another platform (~75% migrated by late June 2026) and Webapper is decommissioning the hosting footprint (infrastructure downsizing began 2026-07-01). Remaining work is DMS importer maintenance through the final customer transfers. The detail below reflects the system during the active engagement.
 
 ## Overview
 

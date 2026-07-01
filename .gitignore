@@ -1,1 +1,15 @@
+# Temp / scratch
 tmp/
+
+# Accidental shell dotfiles — stock OS skeleton files, not team config.
+# (macOS uses zsh; these only apply inside Git Bash/WSL on Windows.)
+.bashrc
+.profile
+.bash_logout
+
+# Stray files
+commitmsg.txt
+
+# OS noise (cross-platform team: Windows + macOS)
+.DS_Store
+Thumbs.db
