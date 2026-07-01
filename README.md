@@ -44,6 +44,7 @@ claude-cowork-template/
 │   ├── project-brief.md    — Template for kicking off a new project
 │   └── jira-ticket.md      — Template for writing structured tickets
 ├── HARNESS/                — Optional. Software/coding-specific scaffolding for project repos.
+├── .claude/skills/         — Optional. Reusable skills Claude can invoke (example skills included)
 ├── OUTPUTS/                — Where Claude saves deliverables you want to find later
 └── README.md               — This file
 ```
@@ -90,6 +91,7 @@ The most common customizations:
 - Adding domain-specific files under `ABOUT ME/` (e.g., `my-design-system.md` for designers, `my-research-methods.md` for researchers, `my-clients.md` for consultants)
 - Adding a `PRIVILEGED/` or `LEGAL/` folder for sensitive content with a clear "approval required" note in `my-rules.md`
 - Replacing `OUTPUTS/` with a deeper structure (e.g., `OUTPUTS/{YYYY-MM-DD-topic}/`) once you've done enough work to know what you save
+- Adding reusable skills under `.claude/skills/` (see that folder's README; two example skills are included)
 
 Treat this template the way you'd treat a notebook: useful when it reflects how *you* think, not how the original author thought.
 

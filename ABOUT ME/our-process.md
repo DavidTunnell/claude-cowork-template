@@ -152,6 +152,27 @@ We run a project-based studio model. Each client engagement gets a small core te
 
 ---
 
+## Working With AI
+
+[How does your team (or you) actually use AI in the work? Which tools are standard, what it's used for, what's off-limits, and what the default expectation is. Even a few lines here helps Claude match how your organization wants AI applied.]
+
+- **Standard tools:** [WHICH AI TOOLS ARE APPROVED / EXPECTED — E.G., CLAUDE DESKTOP, CLAUDE CODE, COWORK, AN INTERNAL ASSISTANT]
+- **What to use it for:** [DRAFTING, RESEARCH, CODE, ANALYSIS, SUMMARIES, AUTOMATING REPETITIVE WORK, ETC.]
+- **Guardrails:** [WHAT SHOULD *NOT* GO INTO AI TOOLS — SECRETS, PII, CLIENT-CONFIDENTIAL DATA — AND ANY REVIEW/APPROVAL EXPECTED BEFORE AI OUTPUT SHIPS]
+- **Default mindset:** [E.G., "FOR ANY NEW TASK, ASK HOW AI COULD HELP DO IT FASTER/BETTER" — OR A MORE CAUTIOUS STANCE IF THAT FITS YOUR ORG]
+
+<details>
+<summary>Example (a company going "AI-native")</summary>
+
+- **Standard tools:** Everyone uses Claude — Desktop for chat, Cowork for documents and browser tasks, Claude Code for engineers. New hires are onboarded to the tools in week one.
+- **What to use it for:** First drafts, research and summarization, data analysis, code, and automating repetitive toil (status roll-ups, triage, reporting). The goal is to empower people to ship more and take on work that used to be out of reach — not to replace anyone.
+- **Guardrails:** No secrets, credentials, or client-confidential data in tools that aren't on approved/controlled infrastructure. AI output that ships to customers or production gets a human review first. Agents with write access are gated behind solid engineering foundations.
+- **Agents + oversight:** As teams get comfortable, they build small agents to automate recurring work, and every deployed agent is visible and monitored from one place, following a standard pattern for building, testing, and deploying.
+- **Default mindset:** For any new feature, project, or process, ask *"how can AI help us do this faster and better?"* — then share what works so the whole team levels up.
+</details>
+
+---
+
 ## Conventions & Norms
 
 [The unwritten rules that the team follows. Often the things new joiners trip over.]
