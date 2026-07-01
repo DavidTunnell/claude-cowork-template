@@ -178,6 +178,25 @@ Not yet mature. The goal is to establish a formal PR review workflow and leverag
 - Use formatting and link to external tools (Google Docs, Sheets, Miro) when needed
 - In the future our goal is to **Never store access credentials in Confluence**
 
+## Where Webapper Is Headed — AI Consulting (the #1 strategic effort)
+
+**Webapper is pivoting to become an AI consulting company. This is the most important effort for our future** — everything else supports it. Full plan: [AI Consulting — Go-to-Market Rollout Plan](https://docs.google.com/document/d/1-9XW8md_UjWWLGW1zo_Kbzrna3og1bCs2muVuASBSlA/edit) (source of truth — keep pricing/ICP detail there, not duplicated here).
+
+We're standing up a **productized** AI consulting line for SMBs and SaaS teams that have AI ambition but no internal AI talent — turning it into working software on a fixed timeline and fixed price. Positioning: **we ship production AI, not strategy decks** — model-agnostic, built from live deployments, a reusable template library, hybrid US/Vietnam delivery, plus our existing managed-infrastructure practice.
+
+**Service ladder** (pricing bands live in the GTM doc):
+
+- **AI Readiness Assessment** — the shared intake *and* first deliverable: audit workflows/data/tools and deliver a prioritized, ROI-ranked opportunity map that ends in a clear Quick-Win vs. Fractional-CTO recommendation.
+- **Quick-Win Implementation** — one workflow automated end-to-end; custom the first time in a vertical, then templated. The primary revenue engine.
+- **Training / Enablement → Advisory Retainer → Active Retainer** — recurring; we become the client's AI team.
+- **Fractional CTO** — graduation path for clients needing ongoing AI strategy and architecture.
+
+Motion: **Assessment qualifies → Quick-Win proves → Retainer recurs → Fractional CTO graduates.** Launch verticals: **MSPs / IT services** (first proof point: Anthropic Managed Agents for hosting issue resolution) and **professional services** (accounting, legal, agencies). Open strategic question: reposition legacy Consulting & Support as the *execution arm* feeding the AI offerings rather than sunsetting it. CloudSee Drive stays the flagship product and a reference for what we can ship.
+
+**The backbone (internal, and paramount):** none of this ships safely until our engineering foundations are AI-ready. That's the **Company OS / Foundations Readiness** effort — [`WEBA-122`](https://webapper.atlassian.net/browse/WEBA-122) — getting every project security-clean, governed, tested, and observable so AI agents *amplify* good work instead of amplifying dysfunction at agent speed (the "amplification test," per `webapper-os/decisions/0002`). Track 1 (security hygiene — move credentials into per-account AWS Secrets Manager, out of repos and Confluence) gates the rest. It builds on the AI-native groundwork ([`WEBA-80`](https://webapper.atlassian.net/browse/WEBA-80)) and unlocks the agent dashboard on Claude Managed Agents at agents.webapper.com ([`WEBA-94`](https://webapper.atlassian.net/browse/WEBA-94)). **WEBA-122 and the AI epics are the top priority.**
+
+---
+
 ## Working With AI at Webapper
 
 **Shared.** Reflects the internal AI-native direction ("Making Webapper AI-Native") and the current theme, *From Learning to Shipping*.
