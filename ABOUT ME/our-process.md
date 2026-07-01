@@ -178,6 +178,27 @@ Not yet mature. The goal is to establish a formal PR review workflow and leverag
 - Use formatting and link to external tools (Google Docs, Sheets, Miro) when needed
 - In the future our goal is to **Never store access credentials in Confluence**
 
+## Where Webapper Is Headed — AI Consulting (our #1 strategic effort)
+
+**Webapper is pivoting to become an AI consulting company. This is the most important effort for our future** — everything else supports it. We're standing up a *productized* AI consulting line that helps small and midsize businesses and SaaS teams turn AI ambition into working software on a fixed timeline and a fixed price. The through-line: **we ship production AI, not strategy decks.**
+
+The service ladder (full detail lives in the AI Consulting go-to-market plan):
+
+- **AI Readiness Assessment** — the shared intake *and* first deliverable. Audit a client's workflows, data, and tools; hand back a prioritized, ROI-ranked opportunity map.
+- **Quick-Win Implementation** — one high-value workflow automated end-to-end. Custom the first time in a vertical, then templated for repeatability. This is the primary revenue engine.
+- **Training / Enablement → Advisory Retainer → Active Retainer** — recurring engagement as we become the client's AI team.
+- **Fractional CTO** — the graduation path for clients who need ongoing AI strategy and architecture.
+
+The motion is **Assessment qualifies → Quick-Win proves → Retainer recurs → Fractional CTO graduates.** Launch verticals are **MSPs / IT services** and **professional services** (accounting, legal, agencies) — areas where we have live use cases and where the work templates across clients. Our existing product (CloudSee Drive) and our services/hosting engagements become the delivery muscle and the proof behind the AI offerings.
+
+**The backbone (internal, and paramount):** none of this ships safely until our own engineering foundations are AI-ready. That's the **Company OS / Foundations Readiness** effort — [`WEBA-122`](https://webapper.atlassian.net/browse/WEBA-122) — getting every project security-clean, governed, tested, and observable so AI agents *amplify* good work instead of amplifying dysfunction at agent speed (the "amplification test"). It builds on the AI-native groundwork ([`WEBA-80`](https://webapper.atlassian.net/browse/WEBA-80)) and unlocks the agent dashboard on Claude Managed Agents ([`WEBA-94`](https://webapper.atlassian.net/browse/WEBA-94)). **Progress on WEBA-122 and the AI epics is the top priority** — treat work that advances them accordingly.
+
+**A second productizable asset — our AI delivery engine.** Alongside the consulting line, Kevin is building a self-learning, internally-built AI system (codename *"Herb Inspector"* — a better name is pending) that has turned into a **reusable delivery engine**: an MCP server that makes Claude an AI-native engineer for a codebase. It scans for security and quality defects (confidence-tiered, and it understands the codebase's own hardening idioms so it doesn't flag already-safe code), drives Jira requirements to *verified* fixes (read-only Jira intake → plan + human-gated acceptance criteria → implement → real automation-test gate → "done" means done), and gets smarter with every ticket (learns the code's safe patterns, retires noisy rules, records lessons). It auto-records every change and lesson through Claude hooks, so nothing is lost.
+
+It's **language-agnostic** — the engine and workflow are identical across apps; only a small per-language JSON profile differs (scan rules, code-map patterns, DB types, safety checks). CFML and ASP.NET profiles ship today and a Selenium browser-test tier is being added. Proven on the iBizFusion CRM; the **herbco.com ASP.NET codebase is the next target and first cross-language proof point.** Strategically it's a **second "factory"** we can productize — an add-on to engagements or a standalone service for clients with proprietary software, and a natural fit for security remediation on Beckway-involved acquisitions.
+
+---
+
 ## Working With AI at Webapper
 
 **Shared.** Reflects the internal AI-native direction ("Making Webapper AI-Native") and the current theme, *From Learning to Shipping*.
