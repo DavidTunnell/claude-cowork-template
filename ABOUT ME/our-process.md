@@ -178,6 +178,31 @@ Not yet mature. The goal is to establish a formal PR review workflow and leverag
 - Use formatting and link to external tools (Google Docs, Sheets, Miro) when needed
 - In the future our goal is to **Never store access credentials in Confluence**
 
+## Where Webapper Is Headed — AI Consulting (the #1 strategic effort)
+
+**Webapper is pivoting to become an AI consulting company. This is the most important effort for our future** — everything else supports it. Full plan: [AI Consulting — Go-to-Market Rollout Plan](https://docs.google.com/document/d/1-9XW8md_UjWWLGW1zo_Kbzrna3og1bCs2muVuASBSlA/edit) (source of truth — keep pricing/ICP detail there, not duplicated here).
+
+We're standing up a **productized** AI consulting line for SMBs and SaaS teams that have AI ambition but no internal AI talent — turning it into working software on a fixed timeline and fixed price. Positioning: **we ship production AI, not strategy decks** — model-agnostic, built from live deployments, a reusable template library, hybrid US/Vietnam delivery, plus our existing managed-infrastructure practice.
+
+**Service ladder** (pricing bands live in the GTM doc):
+
+- **AI Readiness Assessment** — the shared intake *and* first deliverable: audit workflows/data/tools and deliver a prioritized, ROI-ranked opportunity map that ends in a clear Quick-Win vs. Fractional-CTO recommendation.
+- **Quick-Win Implementation** — one workflow automated end-to-end; custom the first time in a vertical, then templated. The primary revenue engine.
+- **Training / Enablement → Advisory Retainer → Active Retainer** — recurring; we become the client's AI team.
+- **Fractional CTO** — graduation path for clients needing ongoing AI strategy and architecture.
+
+Motion: **Assessment qualifies → Quick-Win proves → Retainer recurs → Fractional CTO graduates.** Launch verticals: **MSPs / IT services** (first proof point: Anthropic Managed Agents for hosting issue resolution) and **professional services** (accounting, legal, agencies). Open strategic question: reposition legacy Consulting & Support as the *execution arm* feeding the AI offerings rather than sunsetting it. CloudSee Drive stays the flagship product and a reference for what we can ship.
+
+**The backbone (internal, and paramount):** none of this ships safely until our engineering foundations are AI-ready. That's the **Company OS / Foundations Readiness** effort — [`WEBA-122`](https://webapper.atlassian.net/browse/WEBA-122) — getting every project security-clean, governed, tested, and observable so AI agents *amplify* good work instead of amplifying dysfunction at agent speed (the "amplification test," per `webapper-os/decisions/0002`). Track 1 (security hygiene — move credentials into per-account AWS Secrets Manager, out of repos and Confluence) gates the rest. It builds on the AI-native groundwork ([`WEBA-80`](https://webapper.atlassian.net/browse/WEBA-80)) and unlocks the agent dashboard on Claude Managed Agents at agents.webapper.com ([`WEBA-94`](https://webapper.atlassian.net/browse/WEBA-94)). **WEBA-122 and the AI epics are the top priority.**
+
+**A second productizable asset — our AI delivery engine.** Alongside the consulting line, Kevin is building a self-learning, internally-built AI system (codename *"Herb Inspector"* — needs a better name) that has become a **reusable delivery engine**: an MCP server that turns Claude into an AI-native engineer for a codebase. Six pillars: (1) a CFML/ASP.NET-aware **security & quality scanner** with confidence tiers that understands the code's own hardening idioms, so it doesn't flag already-safe code; (2) a **requirement → verified-fix pipeline** with read-only Jira intake, human-gated acceptance criteria, then implement/test/report/learn; (3) a **real automation-test (QC) engine** that proves fixes through the running app (never the DB directly) and won't let a requirement be "done" without a real test pass or explicit manual sign-off; (4) **auto-learning** (rule-precision tuning, sanitizer discovery, self-improvement with one-click approve); (5) **persistent memory + a System Knowledge Model** (files, functions, endpoints, auth, DB-table usage); (6) **zero-gap Claude hook integration** (UserPromptSubmit sets the active ticket, PostToolUse records changed files, Stop captures a lesson).
+
+**Language-agnostic:** the engine and workflow are identical across apps; only a small JSON profile differs per language (scan rules, code-map patterns, DB types, safety checks). CFML and ASP.NET profiles ship today; a Selenium browser-test tier is in progress. Proven on the iBizFusion CRM; **herbco.com (ASP.NET) is the next target and first cross-language proof point** (drop `.claude/mcp/` into the repo, run the wizard, it auto-detects C# and selects the aspnet profile).
+
+**Productization thesis:** this is a second "factory" beside the consulting line. Sell it as an **add-on** to engagements or a **standalone service** for clients with proprietary software; at minimum, keep pointing it at **Beckway-involved acquisitions for security remediation.** It plugs straight into the consulting Quick-Win and retainer rungs.
+
+---
+
 ## Working With AI at Webapper
 
 **Shared.** Reflects the internal AI-native direction ("Making Webapper AI-Native") and the current theme, *From Learning to Shipping*.
