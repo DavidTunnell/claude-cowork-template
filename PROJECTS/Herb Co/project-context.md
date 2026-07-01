@@ -1,12 +1,14 @@
 # Project Context: Herb Co (iBizFusion)
 
-**Last Updated:** 2026-05-04
+**Last Updated:** 2026-07-01
 
 ## Overview
 
 Webapper is the hands-on technical team for **Beckway**'s acquisition of **Monterey Bay Herb Co. ("Herbco")**, which is itself acquiring **Thrive**, a specialty nutraceutical ingredients supplier (~$23M revenue, ~58 staff, 1,000+ metric tons shipped annually). Thrive runs its entire operation on **iBizFusion** ("iBiz") — a custom monolithic ColdFusion / MySQL ERP built over 20+ years by a single external developer (Adrian) based in Romania. Beckway's 61-page Technical Due Diligence concluded that iBiz is both a strategic asset (it natively automates complex compliance workflows) and a technical liability (single-developer dependency, recently-upgraded but historically end-of-life stack, no staging environment, significant security debt). Our job is to **audit, stabilize, and then operationally support** the platform across a six-month engagement that is itself Phase 1 of Beckway's multi-year roadmap.
 
 ## Current Status
+
+> **Status update (2026-07-01):** The engagement has matured and **expanded** beyond the original assessment. The iBiz stack upgrade is complete and the initial security code-review remediation (`HERB-1`) is largely closed. Active workstreams now: **Monterey Web Consolidation (AWS) + Commerce Migration (Azure)** (`HERB-129`, ~September cutover), **SharePoint / Microsoft 365** document migration (`HERB-121`), and **retained ERP support + Azure/AWS monitoring**. The Phase 1/2/3 breakdown below is retained as historical reference from the original 6-month plan.
 
 - **Phase:** Phase 1 — Technical Evaluation & Risk Validation (Month 1 of 6)
 - **Current Sprint Focus:** Stand up Herbco UAT AWS account (797601398324) with chained-AssumeRole IdC access for the team; finalize the prioritized remediation roadmap from gap analysis; maintain weekly working cadence with Adrian.
