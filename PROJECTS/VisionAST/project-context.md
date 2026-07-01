@@ -1,18 +1,18 @@
-# Project Context: VisionAST
+# Project Context: VisionAST  *(RETIRED / TRANSITIONING — historical reference)*
 
-**Last Updated:** 2026-03-18
+**Last Updated:** 2026-07-01
+
+> **Status:** This engagement is winding down. VisionAST's customers are migrating to another platform, and Webapper's involvement is concluding in 2026 (infrastructure downsizing began 2026-07-01; the remaining work is DMS importer maintenance through the final customer transfers). This file is kept as **historical reference** for a long-running client relationship — it is not an active project. The details below describe the system as it operated during the active engagement.
 
 ## Overview
 
-[VisionAST](https://www.visionast.com/) is Webapper's primary client project, a data analytics platform built for automotive and powersports dealerships. It helps dealers unlock profitability through real-time reporting on their DMS (dealership management system) data. The product suite includes SalesVision (variable ops reporting), PowerVision (powersports-specific), FinanceVision (F&I analytics), ServiceVision (service department metrics), and MenuVision (F&I video/reporting via iTapMenu partnership). It integrates with 12+ DMS systems, runs on AWS, and provides unified single sign-on access across multi-location dealer groups. VisionAST is Webapper's longest-running client relationship.
+[VisionAST](https://www.visionast.com/) was, for years, Webapper's longest-running client relationship — a data analytics platform for automotive and powersports dealerships that turns DMS (dealership management system) data into real-time profitability reporting. The product suite includes SalesVision (variable ops reporting), PowerVision (powersports-specific), FinanceVision (F&I analytics), ServiceVision (service department metrics), and MenuVision (F&I video/reporting via the iTapMenu partnership). It integrates with 12+ DMS systems, runs on AWS, and provides unified single sign-on across multi-location dealer groups.
 
 ## Current Status
 
-- **Phase:** Active Development (legacy system, with long-term modernization planned)
-- **Current Sprint Focus:** DX1 DMS integration for PowerVision/FinanceVision, BHS updates, system error log review, Motive MIX v2 API migration prep
-- **Last Major Release:** DX1 pilot location onboardings (in progress), performance tuning for large-scale users
-- **Next Milestone:** DX1 Integration completion, Motive v2 API migration (deadline: end of 2026), Fortellis Deals API migration (CDK requirement)
-- **Release Cadence:** Ongoing maintenance with feature work driven by customer/DMS partner requirements
+- **Phase:** Winding down / transitioning away from Webapper — customers migrating to another platform (~75% migrated as of late June 2026)
+- **Remaining work:** DMS importer maintenance through the final customer/location transfers (early July 2026); infrastructure decommission/downsizing (initial downsizing completed 2026-07-01)
+- **Historical focus (during active engagement):** DX1 DMS integration for PowerVision/FinanceVision, Motive MIX v2 API migration, Fortellis Deals API migration (CDK requirement), performance tuning for large-scale users
 
 ## Team
 
@@ -27,12 +27,8 @@
 | David Tunnell | Lead Software Architect | Architecture oversight, modernization planning, AWS cost optimization |
 
 ### VisionAST Client Team
-| Name | Role | Email |
-|------|------|-------|
-| Kayla Naumann | Operations | kaylag@visionast.com |
-| Jessica Dimeo | Operations | jdimeo@visionast.com |
-| Jianna Benardo | Operations | jbenardo@visionast.com |
-| Reagan Collier-Hogan | Operations | reaganc@visionast.com |
+
+Client-side operations contacts were maintained in access-controlled systems (not reproduced in this template).
 
 ## Architecture
 
@@ -76,11 +72,11 @@ VisionAST integrates with 12+ Dealer Management Systems. Key integrations:
 
 | Environment | Details |
 |-------------|---------|
-| Production | EC2 Auto Scaling group (api-prod), Aurora MySQL, AWS Account 319622971137 |
+| Production | EC2 Auto Scaling group (api-prod), Aurora MySQL, separate AWS account (ID in access-controlled systems) |
 | Test | test2 user (Master Agent with access to ALL locations, used for large quarterly reports) |
 
 ### AWS Infrastructure
-- **Account:** 319622971137 (separate from Webapper main account)
+- **Account:** separate from Webapper main account (ID in access-controlled systems)
 - **Region:** us-east-1 (assumed)
 - **Auto Scaling:** api-prod group (scales up at 10:00 UTC, down at 23:07 UTC daily)
 - **Database:** Aurora MySQL (RDS), previously 8xl instance (cost optimization in progress to downsize)

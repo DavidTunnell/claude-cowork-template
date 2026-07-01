@@ -73,6 +73,5 @@ project = CSD AND ("Epic Link" = CSD-202 OR key = CSD-202)
 - Infrastructure: https://webapper.atlassian.net/wiki/spaces/CD1/pages/27000833/Infrastructure
 - Deployment Specification: https://webapper.atlassian.net/wiki/spaces/CD1/pages/26935312/Deployment+Specification
 - Sprint History: https://webapper.atlassian.net/wiki/spaces/CD1/pages/171933697/Sprint+History
-- Production Credentials: https://webapper.atlassian.net/wiki/spaces/CD1/pages/26443778/Production+Credentials
-- Development Credentials: https://webapper.atlassian.net/wiki/spaces/CD1/pages/26804240/Development+Credentials
 - Permissions Spec: https://docs.google.com/document/d/1W6u5Zyg8cIp-0HhZZ1-Wy7sbqZMjR8ru2XtJFymaUFE
+- Credentials (production / dev / user): in Confluence, access-controlled — not linked here
