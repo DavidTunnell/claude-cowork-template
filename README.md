@@ -36,7 +36,7 @@ claude-cowork-template/
 │   └── VisionAST/         — Retired / transitioning (historical reference)
 ├── TEMPLATES/             — Shared templates (project-brief, project-context, jira-ticket)
 ├── HARNESS/               — Shared Claude operating harness (memory, retros, verification, MCP shortlist)
-├── .claude/skills/        — Shared skills (e.g. loop-engineering)
+├── .claude/skills/        — Shared skills (loop-engineering, adhd)
 ├── OUTPUTS/               — Where Claude saves finished deliverables
 └── README.md              — This file
 ```
@@ -57,7 +57,9 @@ claude-cowork-template/
 Webapper is going **AI-native** — see `ABOUT ME/our-process.md` § *Working With AI at Webapper* for the direction and the Anthropic tools we standardize on (Claude Desktop, Claude Code, Cowork, and the API / Managed Agents).
 
 - **`HARNESS/`** is the shared Claude operating harness: typed memory, session retros, verification patterns, and an MCP shortlist. Read `HARNESS/README.md` when bootstrapping a project.
-- **`.claude/skills/`** holds shared skills. Included today: **loop-engineering** — a pattern for iterative, verifier-driven work loops.
+- **`.claude/skills/`** holds shared skills:
+  - **loop-engineering** — iterative, verifier-driven work loops
+  - **adhd** — parallel divergent ideation across many cognitive frames, for open-ended architecture / design / naming decisions (gated; it's ~10 agent calls per run)
 
 ## Setting Global Instructions
 
