@@ -63,6 +63,8 @@ Additional statuses: Waiting on Customer (blocked on external party), On Hold (p
 
 Daily and sprint-level monitoring happens through a combination of Jira boards, dashboards, and reports:
 
+> **Current active projects (2026):** `HERB`, `CSD`, `AB`, `EREP`, `IM`, and `WEBA` (internal). *VisionAST (`VAST`) is winding down and EDS is retired* — some board/filter examples below still reference them for historical continuity; see `PROJECTS/README.md` for the current roster.
+
 - **Active Sprint Boards:** Monitored daily. Shows current sprint tickets, statuses, assignees, and workflow columns.
   - [CSD Board](https://webapper.atlassian.net/jira/software/c/projects/CSD/boards/12)
   - [EDS Board](https://webapper.atlassian.net/jira/software/c/projects/EDS/boards/10)
@@ -175,6 +177,20 @@ Not yet mature. The goal is to establish a formal PR review workflow and leverag
 - Avoid duplicate information across pages, use page hierarchy for clarity
 - Use formatting and link to external tools (Google Docs, Sheets, Miro) when needed
 - In the future our goal is to **Never store access credentials in Confluence**
+
+## Working With AI at Webapper
+
+**Shared.** Reflects the internal AI-native direction ("Making Webapper AI-Native") and the current theme, *From Learning to Shipping*.
+
+Webapper is becoming an **AI-native company** — a deliberate, company-wide direction, not a side experiment. The teams that embrace AI now will lead our industry, and we intend to be ahead of that curve. The goal is explicitly to **empower people, not replace them**: every team member gets a powerful collaborator so we can ship more, ship faster, and take on work that used to be out of reach. Our developers' existing skills — thinking in systems, debugging, iterating, judging whether output is actually good — are exactly what make this work.
+
+**We standardize on Anthropic's tools.** Everyone starts with **Claude Desktop** to get fluent with how Claude thinks. Developers use **Claude Code** in the terminal for building features, fixing bugs, and routine work against our codebases. **Claude Cowork** brings the same power to everyone — technical or not — for browser tasks, documents, and agents that act on your behalf. The **Claude API and Managed Agents** are our platform for deploying automation.
+
+**How we work day to day.** We are past "learning AI" and into "shipping with AI": Claude-Code-assisted commits, AI-driven features in our products, and every person owning at least one AI workflow. Practices already in use include **DailyPulse** async standup intelligence, an **AI email-triage** digest, **JQL-driven Jira automation**, automated time/worklog tooling, and hosting cost-and-health review agents.
+
+**Agents + a central dashboard.** As we get comfortable, we build agents that automate repetitive toil (monitoring, notifications, data processing, ticket flagging), and every deployed agent becomes visible, monitored, and managed from a **central agent dashboard**, following a standard pattern for creating, testing, and deploying. Because agents amplify whatever they touch, write-access agents are gated behind solid engineering foundations. We maintain shared **CLAUDE.md templates, prompts, and guardrails** so quality scales with us.
+
+**The default mindset:** for any new feature, project, or process, ask **"How can AI help us build this faster and better?"** — then share what works so the whole team levels up.
 
 ## Tools & Claude Access Methods
 

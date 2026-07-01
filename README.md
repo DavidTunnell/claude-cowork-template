@@ -21,20 +21,22 @@ Every team member gets their own copy. You fill in your personal details, push i
 
 ```
 claude-cowork-template/
-├── ABOUT ME/
+├── ABOUT ME/              — Personal scaffold (you customize) + shared Webapper context
 │   ├── about-me.md        — Your role, background, stack, priorities
 │   ├── my-voice.md        — Your tone, style, patterns by audience
-│   ├── my-rules.md        — Webapper standards + your personal rules
-│   └── our-process.md     — Webapper Agile Guide (WAG) process (shared)
-├── PROJECTS/
-│   ├── CloudSee Drive/
-│   │   └── project-context.md — Architecture, team, active work, deployment
-│   └── VisionAST/
-│       └── project-context.md — Architecture, team, active work, deployment
-├── TEMPLATES/
-│   ├── project-brief.md       — Template for kicking off new projects
-│   ├── project-context.md     — Template for documenting project architecture
-│   └── jira-ticket.md         — Template for writing structured Jira tickets
+│   ├── my-rules.md        — Webapper standards (shared) + your personal rules
+│   └── our-process.md     — Webapper Agile Guide (WAG) + how we work with AI (shared)
+├── PROJECTS/              — Shared company truth: current projects, same for everyone
+│   ├── README.md          — Project roster (active + retired) and Jira keys
+│   ├── Herb Co/           — Anchor client (iBizFusion ERP + web/commerce migration)
+│   ├── CloudSee Drive/    — Flagship internal SaaS product
+│   ├── Atlantic British/  — Managed-hosting client (RoverParts.com)
+│   ├── eRep/              — Managed-hosting client
+│   ├── Icon Media/        — Managed-hosting client (multi-storefront e-commerce)
+│   └── VisionAST/         — Retired / transitioning (historical reference)
+├── TEMPLATES/             — Shared templates (project-brief, project-context, jira-ticket)
+├── HARNESS/               — Shared Claude operating harness (memory, retros, verification, MCP shortlist)
+├── .claude/skills/        — Shared skills (e.g. loop-engineering)
 ├── OUTPUTS/               — Where Claude saves finished deliverables
 └── README.md              — This file
 ```
@@ -49,6 +51,13 @@ claude-cowork-template/
 | `our-process.md` | **Shared** | Don't change this, it's the WAG. If the process changes, we update the template repo and everyone pulls. |
 | `PROJECTS/*` | **Shared** | Don't change project context files unilaterally. These reflect the current state of each project and should stay consistent across the team. Update them as a team when architecture, active work, or team assignments change. |
 | `TEMPLATES/*` | **Shared** | Same templates for everyone. Propose changes to the team. |
+
+## Working With AI + Skills
+
+Webapper is going **AI-native** — see `ABOUT ME/our-process.md` § *Working With AI at Webapper* for the direction and the Anthropic tools we standardize on (Claude Desktop, Claude Code, Cowork, and the API / Managed Agents).
+
+- **`HARNESS/`** is the shared Claude operating harness: typed memory, session retros, verification patterns, and an MCP shortlist. Read `HARNESS/README.md` when bootstrapping a project.
+- **`.claude/skills/`** holds shared skills. Included today: **loop-engineering** — a pattern for iterative, verifier-driven work loops.
 
 ## Setting Global Instructions
 
@@ -69,7 +78,7 @@ The `my-voice.md` file is the hardest to fill in by hand. Here's the shortcut:
 
 ## Recommended Model Settings
 
-- **Model:** Opus 4.6
+- **Model:** Opus 4.8 (latest available)
 - **Extended Thinking:** ON
 
 ## Keeping It Current
