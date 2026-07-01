@@ -46,8 +46,17 @@ These override anything else. Drawn from `ABOUT ME/my-rules.md` plus project-spe
 The single command Claude must run to check work before claiming completion.
 
 ```
+# Single-package projects:
 [exact command, e.g., npm run typecheck && npm test -- --run]
+
+# Multi-package / monorepo projects (run per affected package):
+# Frontend (in <frontend-repo>/):
+[exact command]
+# Backend service (in <backend-repo>/<service>/):
+[exact command]
 ```
+
+For multi-package projects, verify each affected package independently. Don't claim "done" on a frontend change because backend tests passed.
 
 If verification fails, treat it as a blocker. Roll back rather than patch forward.
 
