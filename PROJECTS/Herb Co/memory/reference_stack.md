@@ -1,59 +1,42 @@
 # reference_stack
 
-**Last Updated:** 2026-05-04
+**Last Updated:** 2026-07-01
 
-**Summary:** iBizFusion's full stack with versions, post-Q1-2026 upgrade. Use this to anchor questions like "what version of CF supports X" or "is feature Y available in MySQL 8."
+**Summary:** iBizFusion's stack (post-upgrade) plus the platforms the newer workstreams touch. Use this to anchor questions like "what version of CF supports X" or "where does the commerce migration land."
 
-## Application
+## iBizFusion (core ERP)
 
-- **ColdFusion 2023** (Adobe). Production. Adrian also runs CF 2025 on his dev machine for early-deprecation visibility.
-- **Architecture:** classic CF — `.cfm` for UI, `.cfc` for APIs, `<cftag>`-heavy.
-- **Files:** ~1,334 source files (per static analysis 2026-04-06).
-- **God-file:** `commonFunctions.cfm` — permissions, inventory, order state machines, pricing, costing, commissions, audit trails, KPI calculations, integration utilities. Functions depend on APPLICATION/SESSION/Request scopes (non-portable, untestable in isolation).
-- **Tests:** none.
-- **CI/CD:** none. Direct production deployment.
-- **Linter / formatter:** none configured.
+- **Application:** Adobe ColdFusion 2023. Classic CF — `.cfm` for UI, `.cfc` for APIs, `<cftag>`-heavy.
+- **God-file:** `commonFunctions.cfm` — permissions, inventory, order state machines, pricing, costing, commissions, audit trails, KPI calculations, integration utilities. Functions depend on APPLICATION/SESSION/Request scopes (non-portable, hard to test in isolation). Treat as high-cascade-risk.
+- **Database:** MySQL 8 (upgraded from 5.6). 370+ tables, no published ERD. DDL changes are direct.
+- **OS / Hosting:** Windows Server (upgraded off end-of-life). Managed VPS host with a third-party WAF.
+- **Tests / CI:** none historically; no linter/formatter configured. Modern SDLC is being introduced with the new workstreams.
 
-## Database
+## New-workstream platforms
 
-- **MySQL 8** (post Q1 2026 upgrade from 5.6). Adrian completed application-level query compatibility changes; no schema changes required.
-- **Tables:** 370+. No published ERD.
-- **Migration tooling:** none. DDL changes are direct.
+- **AWS** (marketing-site consolidation): Lightsail, Route 53, single WAF — consolidating NP Nutra sites (npnutra.com WordPress, NPNList) into Monterey's own account.
+- **Azure** (commerce migration): App Service + Azure SQL Managed Instance for the Herbco storefront (ASP.NET + SQL Server), plus a Dynamics-GP-adjacent environment.
+- **Microsoft 365 / SharePoint / Graph**: replacing iBiz's Google Drive document backend.
 
-## OS / Hosting
-
-- **Windows Server 2025** (post Q1 2026 upgrade from Win 2012 R2).
-- **Host:** Hostek managed VPS, ~$269/month.
-- **WAF:** SiteLock — used to route the production cutover during the upgrade.
-- **Old server:** retained as rollback, not yet decommissioned (per most recent meeting prep).
-
-## Integrations (point-to-point, undocumented end-to-end)
+## Integrations (point-to-point, under-documented)
 
 | System | Direction | Mechanism |
 |--------|-----------|-----------|
 | Salesforce CRM | Bidirectional | REST API |
 | QuickBooks Online | One-way out | Manual journal entries |
-| Google Drive | Reference | QA docs, CoAs, FSVP |
+| Google Drive → SharePoint | Reference | Docs (migrating to M365) |
 | Lab Portals | Inbound | Manual data entry |
 | Carrier APIs | Outbound | UPS, FedEx, DHL, USPS |
-| eCommerce (CF-based, ~99% complete) | Bidirectional | REST API + HMAC-signed callbacks |
-| WooCommerce (alternative path, in progress) | Bidirectional | REST API + HMAC + nonce |
+| e-Commerce | Bidirectional | REST API + HMAC-signed callbacks |
 | NetNow Credit | One-way | Manual limit updates |
-| Authorize.Net | Outbound | Tokenized payment flow (correctly implemented per static analysis) |
+| Authorize.Net | Outbound | Tokenized payment flow |
 
-## Security stack (as found, not as desired)
+## Security posture (high level)
 
-- **CFQUERYPARAM coverage:** ~85% (static analysis flagged 221 unparameterized queries; 35 ORDER BY injection vectors)
-- **Stored card data encryption:** CFMX_COMPAT (RC2 40-bit) — PCI DSS violation
-- **CSRF coverage:** ~1.5% across the app (Adrian added on login forms in Q1)
-- **Hardcoded credentials in source:** 30+ locations (DB, API, SMTP)
-- **Stripe keys:** secret keys in a web-accessible test file (flagged for immediate cleanup)
-- **Auth:** session-based, password hashing migrated to modern algorithm in Q1 2026
-- **Login:** throttling added in Q1 2026
+The original codebase carried meaningful security debt typical of a long-lived single-developer ColdFusion app (input handling, credential management, stored-data encryption, CSRF coverage). A security code-review remediation effort (HERB-1) has addressed the bulk of it. **Specific findings, counts, and any credential details are tracked in access-controlled Jira/Confluence — not in this template.** Treat payments, auth, and the encryption layer as approval-required areas.
 
-## What we don't know yet
+## What to confirm as work continues
 
-- Backup strategy details (verified or not? how often? where stored?)
-- Disaster recovery plan (none documented — Phase 1 finding)
-- Monitoring / alerting — brief mention of email alerts and slow-query logs, no systematic monitoring
-- Performance baselines (none documented)
+- Backup/DR specifics for iBiz on AWS (DR documentation in progress)
+- Monitoring/alerting coverage across iBiz + the new Azure/AWS environments
+- Performance baselines

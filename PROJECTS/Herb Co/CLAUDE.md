@@ -1,98 +1,82 @@
 # CLAUDE.md
 
 **Project:** Herb Co (iBizFusion)
-**Last Updated:** 2026-05-04
+**Last Updated:** 2026-07-01
 
 ## Stack overview
 
-Webapper is the technical team for Beckway's acquisition of Monterey Bay Herb Co., which is itself acquiring Thrive (~$23M nutraceutical ingredients supplier). Thrive runs on iBizFusion — a custom ColdFusion / MySQL ERP built over 20+ years by a single external developer (Adrian, Romania). We're in Phase 1 of a 6-month engagement: audit, stabilize, and then operationally support. Full project picture in `PROJECTS/Herb Co/project-context.md`.
+Webapper is the technical team for Monterey Bay Herb Co. ("Herbco" / NP Nutra), a Beckway portfolio company. The business runs on iBizFusion — a custom ColdFusion / MySQL ERP built over 20+ years by a single external developer (Adrian, Romania). What began as an audit/stabilize/support engagement has expanded into hosting consolidation, a commerce migration, and retained support. Full picture in `PROJECTS/Herb Co/project-context.md`.
 
-- **Application:** ColdFusion 2023 (Adobe), dev machine on CF 2025
-- **Database:** MySQL 8 (370+ tables, no published ERD)
-- **OS / Hosting:** Windows Server 2025 on Hostek managed VPS
-- **WAF:** SiteLock
-- **Repos:** Adrian-controlled; Webapper engineers each keep a read-only local mirror at `<your-local-dev-path>/ibizfusion`. Migration to Webapper-controlled GitHub planned for Phase 2.
+- **iBiz app:** Adobe ColdFusion 2023
+- **iBiz database:** MySQL 8 (370+ tables, no published ERD)
+- **iBiz hosting:** Windows Server on a managed VPS, third-party WAF
+- **New workstreams:** AWS (Lightsail/Route 53/WAF), Azure (App Service + Azure SQL MI), Microsoft 365 / SharePoint / Graph
+- **Repos:** iBiz source is Adrian-controlled (engineers keep a read-only local mirror); Webapper-controlled source control is being adopted for the new workstreams.
 
 ## Ownership matrix
 
 | Area | Owner | Approval required for |
 |------|-------|----------------------|
-| All iBizFusion source | Adrian (sole dev) | Any direct change in production |
+| iBizFusion source | Adrian (sole dev) | Any direct change in production |
 | `commonFunctions.cfm` | Adrian | Any change — god-file, cascade risk |
-| Credit card encryption (CFMX_COMPAT) | Adrian + Webapper Phase 2 | Any change — PCI DSS-sensitive |
-| Salesforce integration (REST API) | Adrian | Any change to bidirectional sync |
+| Credit-card data handling / encryption | Adrian + Webapper | Any change — payments/PCI-sensitive |
+| Salesforce integration | Adrian | Any change to bidirectional sync |
 | Authorize.Net payment flow | Adrian | Any change — payments-sensitive |
-| Hostek VPS / SiteLock WAF | Adrian | Any production infra change |
-| AWS Herbco UAT account (797601398324) | David Tunnell (Webapper) | Adding/removing IdC users; non-routine IAM |
-| Static analysis findings | Steven Nguyen (Webapper) | Remediation prioritization |
+| iBiz VPS / WAF | Adrian | Any production infra change |
+| AWS / Azure managed environments | David Tunnell (Webapper) | IdC user changes; non-routine IAM/infra |
+| Web consolidation / commerce migration | Steven Nguyen + David Tunnell | Cutover steps, DNS changes |
 | Beckway-facing comms | David Tunnell + Patrick Quinn | Anything implying scope, timeline, or cost |
 
 ## Hard rules
 
 These override anything else. Project-specific gates layered on top of `ABOUT ME/my-rules.md`.
 
-1. **Verify before declaring done.** See "Verify command" below — and note its current limitation.
-2. **Atomic commits, one fix per commit.** When we have our own GitHub repo (Phase 2), strictly enforced. For now (Phase 1, read-only against Adrian's repo) we don't commit; we propose changes via the prioritized remediation roadmap.
-3. **Bugfixes capped at ~50 lines.** Especially in iBiz. The codebase has cascade risk; small changes blast smaller.
-4. **Don't touch production directly.** Phase 1 is assessment, not active dev. Any change in iBiz goes through Adrian until we have a staging environment (Phase 2 deliverable).
+1. **Verify before declaring done.** See "Verify command" below — and note its current limitation on the legacy iBiz app.
+2. **Atomic commits, one fix per commit.** Enforced in Webapper-controlled repos (the new workstreams). Against Adrian's iBiz repo we work read-only and propose changes.
+3. **Bugfixes capped at ~50 lines.** Especially in iBiz — cascade risk means small changes blast smaller.
+4. **Don't touch production directly.** iBiz changes route through Adrian until a staging gate exists. New-workstream changes go through PR + staging.
 5. **Don't touch approval-required areas.** Auth, payments, `commonFunctions.cfm`, the encryption layer. Period.
 6. **Read a file before editing it.** Always.
-7. **Match Adrian's existing patterns.** Even where they're not what we'd choose — Phase 1 is documentation, not refactoring. Phase 2 is when patterns shift.
-8. **Stay in scope.** Phase 1 deliverable is the prioritized remediation roadmap. Don't drift into Phase 2 work.
+7. **Match existing patterns.** In iBiz, match Adrian's conventions even where they're not what we'd choose.
+8. **Stay in scope.** Confirm which workstream a task belongs to; don't drift across them silently.
 9. **Communication tone with Adrian.** Collaborative assessment, not audit. See `project-context.md` § Project Conventions.
 
 ## Verify command
 
-**Status: not yet established for iBizFusion.**
+**Legacy iBiz app:** no automated tests, no CI, no type checker/linter historically. Verification on iBiz is Adrian's manual UI testing plus Webapper read-only review; a staging smoke-test suite is being introduced with the new SDLC. Until a real verify gate exists on iBiz, every "done" claim on iBiz changes is conditional on manual confirmation — say so explicitly in retros.
 
-The legacy iBizFusion stack has no automated tests, no CI, no type checker, no linter setup. Verification today is:
-
-```
-# Adrian's process: manual UI testing on production
-# Webapper's process: read-only static analysis (already delivered 2026-04-06)
-```
-
-**Remediation:** establishing a verify command is itself a Phase 2 deliverable. Candidates being evaluated:
-
-- `cfformat --check` (formatting-only, low value but available)
-- A staging-environment smoke test suite (target Phase 2, blocked on having a staging env)
-- `git status` clean + manual UI smoke against staging (Phase 2 minimum bar)
-
-**Until verify exists:** every "done" claim on iBiz changes is conditional on Adrian's manual confirmation. Document this explicitly in retros — don't pretend a change is verified when it isn't.
+**New workstreams (AWS/Azure/commerce):** use the target repo's verify command (typecheck/tests/lint as applicable) plus a staging validation before any production cutover.
 
 ## Memory
 
 Persistent memory for this project lives at:
 
-- **Cowork:** `PROJECTS/Herb Co/memory/` (in the claude-cowork-template repo)
+- **Cowork:** `PROJECTS/Herb Co/memory/` (this repo)
 - **Claude Code:** `~/.claude/projects/herb-co/memory/` if running CC against your local iBiz mirror
 
-Files use typed prefixes (`user_`, `project_`, `reference_`, `feedback_`) — see `HARNESS/memory/README.md`. Index is `MEMORY.md`. Read the latest retro at the start of every session: `PROJECTS/Herb Co/docs/retros/<latest>.md`.
+Files use typed prefixes (`user_`, `project_`, `reference_`, `feedback_`) — see `HARNESS/memory/README.md`. Index is `MEMORY.md`. Read the latest retro at the start of every session.
 
 ## Subagent dispatch
 
-For this project specifically:
-
-- **Searching iBiz source** (the 1,334-file CF/CFC codebase) → always Explore subagent. Main session can't hold meaningful chunks of that codebase.
-- **Cross-referencing static analysis findings to actual code** → general-purpose subagent with the static analysis PDF as a reference and the source mirror path as the search root.
-- **Beckway PMO communications drafts** → main session, with `ABOUT ME/my-voice.md` loaded.
-- **Architecture / migration calls** (e.g., "should we modernize CFMX_COMPAT now or in Phase 2") → multi-model consultation per `HARNESS/verification-patterns.md`.
+- **Searching iBiz source** (large CF/CFC codebase) → always an Explore subagent; the main session can't hold meaningful chunks of it.
+- **Cross-referencing findings to code** → general-purpose subagent with the source mirror as the search root.
+- **Beckway comms drafts** → main session with `ABOUT ME/my-voice.md` loaded.
+- **Architecture / migration calls** → multi-model consultation per `HARNESS/verification-patterns.md`.
 
 ## Approval-required areas (project-specific)
 
-Before editing or proposing changes in any of these, get explicit approval:
+Get explicit approval before editing or proposing changes in:
 
-- `commonFunctions.cfm` — god-file, change cascades unpredictably across inventory, invoicing, commissions, customer status
-- Anything related to credit card data (CFMX_COMPAT encryption, tokenization flow, Authorize.Net integration)
-- Anything in the Salesforce integration (REST API endpoints, sync logic)
-- Hardcoded credentials cleanup — must be coordinated with Adrian and a parallel Secrets Manager / vault rollout to avoid downtime
-- Production database schema (370+ tables, no ERD — every change is high-risk until we map it)
+- `commonFunctions.cfm` (god-file; cascades across inventory, invoicing, commissions, customer status)
+- Anything touching credit-card data (the encryption layer, tokenization, Authorize.Net)
+- The Salesforce integration
+- Credential cleanup (must be coordinated with Adrian + a parallel secrets-management rollout)
+- Production database schema (370+ tables, no ERD — high-risk until mapped)
+- DNS / cutover steps for the web consolidation and commerce migration
 
 ## Project-specific notes
 
-- **AWS access:** Use IdC SSO. Profile pattern `ama-herbco-uat-ro` (read-only, default) and `ama-herbco-uat-admin` (writes). Account 797601398324, region us-east-1. CloudTrail to `herbco-cloudtrail-797601398324`. See `OUTPUTS/herbco-aws-uat/` for setup artifacts.
-- **Source mirror:** `<your-local-dev-path>/ibizfusion` (read-only mirror of Adrian's repo). For active dev work on the same code, keep a parallel checkout at `<your-local-dev-path>/dev-main`.
-- **SharePoint docs mirror:** `<your-local-dev-path>/ibizfusion/_drive_docs/iBizFusion Documentation (Sharepoint)`.
-- **Drive folder:** https://drive.google.com/drive/u/0/folders/0AAU0auAeY4VQUk9PVA — full link list in `project-context.md`.
-- **Don't open the Lucee-vs-Adobe ColdFusion question** with Adrian. Loaded topic; not Phase 1 scope.
-- **Don't use "legacy" pejoratively** in any Adrian-facing comm. To him this is his life's work.
+- **AWS/Azure access:** Webapper IdC SSO + `ama-*` chained profiles. See `memory/reference_aws_account.md` (no account IDs/secrets are stored in this template).
+- **Source mirror:** keep a read-only local mirror of the iBiz source (substitute your own path, e.g. `<your-local-dev-path>/ibizfusion`).
+- **Don't open the Lucee-vs-Adobe ColdFusion question** with Adrian — loaded topic, not in scope.
+- **Don't use "legacy" pejoratively** in any Adrian-facing comm.

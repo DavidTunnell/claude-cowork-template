@@ -141,10 +141,7 @@ Browse, search, and filter S3 objects by tags within CloudSee Drive. Tree view o
 - **AWS Marketplace:** Available via AWS Marketplace (free trial + paid plans)
 - **Application:** https://app.cloudsee.cloud/
 - **Confluence - Sprint History:** https://webapper.atlassian.net/wiki/spaces/CD1/pages/171933697/Sprint+History
-- **Confluence - User Credentials:** https://webapper.atlassian.net/wiki/spaces/CD1/pages/26443788/User+Credentials
-- **Confluence - Production Credentials:** https://webapper.atlassian.net/wiki/spaces/CD1/pages/26443778/Production+Credentials
-- **Confluence - Dev Credentials:** https://webapper.atlassian.net/wiki/spaces/CD1/pages/26804240/Development+Credentials
-- **Confluence - Access Information:** https://webapper.atlassian.net/wiki/spaces/CD1/pages/26509319/CloudSee+Drive+Access+Information
+- **Credentials & access:** in Confluence, access-controlled (not linked from this template)
 - **Google Doc - Permissions Spec:** https://docs.google.com/document/d/1W6u5Zyg8cIp-0HhZZ1-Wy7sbqZMjR8ru2XtJFymaUFE
 - **Frontend Repo:** Bitbucket `csd-frontend`
 - **Backend Repo:** Bitbucket `csd-backend`

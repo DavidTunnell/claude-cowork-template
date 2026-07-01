@@ -1,6 +1,6 @@
 # Memory Index — Herb Co (iBizFusion)
 
-**Last Updated:** 2026-05-04
+**Last Updated:** 2026-07-01
 
 This is the index for the Herb Co project's typed-memory directory. Every file here is listed below with a one-line summary. Convention: see `HARNESS/memory/README.md`.
 
@@ -14,20 +14,20 @@ This is the index for the Herb Co project's typed-memory directory. Every file h
 
 | File | Summary |
 |------|---------|
-| user_preferences.md | Your project-specific preferences for Herb Co work (template; fill in tone with Adrian, Beckway-facing comm style, scope guardrails) |
+| user_preferences.md | Your project-specific preferences for Herb Co work (template — fill in tone with Adrian, Beckway-facing comm style, scope guardrails) |
 
 ## project_* — facts about this project
 
 | File | Summary |
 |------|---------|
-| project_overview.md | One-paragraph "what is Herb Co / iBizFusion / Beckway." Pull-down summary of project-context.md. |
+| project_overview.md | One-paragraph "what is Herb Co / iBizFusion / Beckway" and current status. Pull-down summary of project-context.md. |
 
 ## reference_* — stable technical anchors
 
 | File | Summary |
 |------|---------|
-| reference_stack.md | iBizFusion stack with versions: CF 2023, MySQL 8, Win Server 2025, Hostek VPS, SiteLock WAF, Salesforce REST, Authorize.Net |
-| reference_aws_account.md | Herbco UAT AWS account 797601398324, IdC profile pattern, CloudTrail location |
+| reference_stack.md | iBiz stack (CF 2023, MySQL 8, Windows Server) + the AWS/Azure/M365 platforms the new workstreams touch; security posture at a high level |
+| reference_aws_account.md | Webapper's IdC SSO + `ama-*` chained-profile AWS access pattern (no account IDs/secrets stored here) |
 
 ## feedback_* — lessons from past sessions
 
@@ -37,7 +37,7 @@ This is the index for the Herb Co project's typed-memory directory. Every file h
 
 ## Latest retro
 
-_No retros yet. Update this section when you write the first one._
+_Update this section when you write the first retro._
 
 - **Date:** [YYYY-MM-DD]
 - **Topic:** [topic]
