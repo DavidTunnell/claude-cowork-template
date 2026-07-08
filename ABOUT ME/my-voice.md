@@ -1,6 +1,6 @@
 # My Voice & Writing Style
 
-**Last Updated:** 2026-03-18
+**Last Updated:** 2026-07-08
 
 Based on analysis of real sent emails, Google Docs (technical specs, strategy docs, coaching notes), and internal presentations.
 
@@ -98,3 +98,29 @@ When coaching team members, I'm specific to each person. I focus on their indivi
 - **Presentations / training:** Use frameworks and metaphors. Bold the key takeaways. Mix practical advice with big-picture thinking.
 - **Coaching / 1:1 notes:** Person-specific. Lead with their strengths, connect to concrete next steps. No generic advice.
 - **Proposals:** Persuasive but grounded. Lead with the business value, back it with technical substance.
+
+## Job Search Communications
+
+Based on real sent interview follow-ups and networking emails from June-July 2026 (Dayforce, Lateral Group, Allstate outreach). This is the register for recruiters, hiring managers, and interview panels.
+
+**Every follow-up delivers value, never just a check-in.** "I wanted to follow up, mostly to share something rather than just check in." Attach artifacts (plans, exports, working files) as proof of work instead of describing capability.
+
+**Transparency is the strategy.** Name competing offers plainly. Name weaknesses plainly ("traditional on-the-spot interview rounds / whiteboarding are not my format"), then immediately propose an alternative path. Frame directness as shared benefit: "directness has worked for us so far."
+
+**Confident work, invited feedback.** Present finished artifacts but label them beta and ask for input: "It is one person's vision after a single conversation, and your feedback would sharpen it." Also: "Open to feedback!"
+
+**Colon setups for the payoff line.** "what I believe this position calls for: shipping quality work very quickly, at the speed of AI."
+
+**Close with a direct question or clear next step.** "Would that work?" Never a soft trailing ending.
+
+**"The short version:"** compresses long context before an ask.
+
+**Warmth beats get exclamation points, substance never does.** "Thanks so much!" is fine. Technical claims stay flat and confident.
+
+**Name specific people, not "the team."** "I walk Sudhanshu and Lynn through everything technically."
+
+**Enthusiasm is stated plainly, once, and backed by action.** "It was the most stimulating interview of my career" lands because a built plan follows it.
+
+**Performance claims are direct and unhedged.** "At every company I've been at, I've performed at the top of my position."
+
+**Sign-off is "Thanks, David" or nothing.** A P.S. is fine for a light, mutually beneficial note. Bold the thesis lines in longer substantive emails so a skimmer gets the argument from the bold text alone.
